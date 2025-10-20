@@ -1,0 +1,273 @@
+
+{
+  "name": "ai_usage_billing",
+  "title": "AI使用统计和计费",
+  "schemas": [
+    {
+      "name": "user_id",
+      "title": "用户ID",
+      "type": "String"
+    },
+    {
+      "name": "billing_period",
+      "title": "计费周期",
+      "type": "String"
+    },
+    {
+      "name": "ai_model_id",
+      "title": "AI模型ID",
+      "type": "String"
+    },
+    {
+      "name": "ai_model_name",
+      "title": "AI模型名称",
+      "type": "String"
+    },
+    {
+      "name": "ai_provider",
+      "title": "AI服务提供商",
+      "type": "String"
+    },
+    {
+      "name": "total_requests",
+      "title": "总请求数",
+      "type": "Number"
+    },
+    {
+      "name": "successful_requests",
+      "title": "成功请求数",
+      "type": "Number"
+    },
+    {
+      "name": "failed_requests",
+      "title": "失败请求数",
+      "type": "Number"
+    },
+    {
+      "name": "total_tokens_input",
+      "title": "输入Token总量",
+      "type": "Number"
+    },
+    {
+      "name": "total_tokens_output",
+      "title": "输出Token总量",
+      "type": "Number"
+    },
+    {
+      "name": "total_tokens",
+      "title": "Token总量",
+      "type": "Number"
+    },
+    {
+      "name": "total_cost",
+      "title": "总费用",
+      "type": "Number"
+    },
+    {
+      "name": "currency",
+      "title": "货币类型",
+      "type": "String"
+    },
+    {
+      "name": "avg_response_time",
+      "title": "平均响应时间(毫秒)",
+      "type": "Number"
+    },
+    {
+      "name": "avg_tokens_per_request",
+      "title": "平均每请求Token数",
+      "type": "Number"
+    },
+    {
+      "name": "avg_cost_per_request",
+      "title": "平均每请求费用",
+      "type": "Number"
+    },
+    {
+      "name": "peak_usage_date",
+      "title": "峰值使用日期",
+      "type": "Date",
+      "format": "date"
+    },
+    {
+      "name": "peak_usage_count",
+      "title": "峰值使用次数",
+      "type": "Number"
+    },
+    {
+      "name": "first_usage_date",
+      "title": "首次使用日期",
+      "type": "Date",
+      "format": "date"
+    },
+    {
+      "name": "last_usage_date",
+      "title": "最后使用日期",
+      "type": "Date",
+      "format": "date"
+    },
+    {
+      "name": "usage_days",
+      "title": "使用天数",
+      "type": "Number"
+    },
+    {
+      "name": "daily_average_requests",
+      "title": "日均请求数",
+      "type": "Number"
+    },
+    {
+      "name": "billing_status",
+      "title": "计费状态",
+      "type": "String"
+    },
+    {
+      "name": "payment_status",
+      "title": "支付状态",
+      "type": "String"
+    },
+    {
+      "name": "payment_method",
+      "title": "支付方式",
+      "type": "String"
+    },
+    {
+      "name": "payment_date",
+      "title": "支付日期",
+      "type": "Date",
+      "format": "date"
+    },
+    {
+      "name": "invoice_id",
+      "title": "发票ID",
+      "type": "String"
+    },
+    {
+      "name": "discount_amount",
+      "title": "折扣金额",
+      "type": "Number"
+    },
+    {
+      "name": "tax_amount",
+      "title": "税费金额",
+      "type": "Number"
+    },
+    {
+      "name": "final_amount",
+      "title": "最终金额",
+      "type": "Number"
+    },
+    {
+      "name": "subscription_plan",
+      "title": "订阅计划",
+      "type": "String"
+    },
+    {
+      "name": "quota_limit",
+      "title": "配额限制",
+      "type": "Number"
+    },
+    {
+      "name": "quota_used",
+      "title": "配额已用",
+      "type": "Number"
+    },
+    {
+      "name": "quota_remaining",
+      "title": "配额剩余",
+      "type": "Number"
+    },
+    {
+      "name": "usage_percentage",
+      "title": "使用百分比",
+      "type": "Number"
+    },
+    {
+      "name": "cost_breakdown",
+      "title": "费用明细",
+      "type": "Object",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "usage_trend",
+      "title": "使用趋势",
+      "type": "Array",
+      "items": {
+        "type": "Object"
+      }
+    },
+    {
+      "name": "error_rate",
+      "title": "错误率",
+      "type": "Number"
+    },
+    {
+      "name": "cache_hit_rate",
+      "title": "缓存命中率",
+      "type": "Number"
+    },
+    {
+      "name": "user_satisfaction_score",
+      "title": "用户满意度评分",
+      "type": "Number"
+    },
+    {
+      "name": "support_tickets_count",
+      "title": "支持工单数",
+      "type": "Number"
+    },
+    {
+      "name": "referral_count",
+      "title": "推荐数量",
+      "type": "Number"
+    },
+    {
+      "name": "loyalty_points",
+      "title": "忠诚度积分",
+      "type": "Number"
+    },
+    {
+      "name": "account_tier",
+      "title": "账户等级",
+      "type": "String"
+    },
+    {
+      "name": "special_notes",
+      "title": "特殊备注",
+      "type": "MultiLineString"
+    },
+    {
+      "name": "auto_renewal_enabled",
+      "title": "自动续费启用",
+      "type": "Boolean"
+    },
+    {
+      "name": "next_billing_date",
+      "title": "下次计费日期",
+      "type": "Date",
+      "format": "date"
+    },
+    {
+      "name": "usage_alerts_enabled",
+      "title": "使用提醒启用",
+      "title": "使用提醒启用",
+      "type": "Boolean"
+    },
+    {
+      "name": "alert_threshold",
+      "title": "提醒阈值",
+      "type": "Number"
+    },
+    {
+      "name": "tags",
+      "title": "标签",
+      "type": "Array",
+      "items": {
+        "type": "String"
+      }
+    }
+  ]
+}
+  

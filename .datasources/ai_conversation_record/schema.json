@@ -1,0 +1,206 @@
+
+{
+  "name": "ai_conversation_record",
+  "title": "AI对话记录",
+  "schemas": [
+    {
+      "name": "conversation_id",
+      "title": "对话ID",
+      "type": "String"
+    },
+    {
+      "name": "user_id",
+      "title": "用户ID",
+      "type": "String"
+    },
+    {
+      "name": "session_id",
+      "title": "会话ID",
+      "type": "String"
+    },
+    {
+      "name": "message_id",
+      "title": "消息ID",
+      "type": "String"
+    },
+    {
+      "name": "message_type",
+      "title": "消息类型",
+      "type": "String"
+    },
+    {
+      "name": "message_content",
+      "title": "消息内容",
+      "type": "MultiLineString"
+    },
+    {
+      "name": "ai_model_id",
+      "title": "AI模型ID",
+      "type": "String"
+    },
+    {
+      "name": "ai_model_name",
+      "title": "AI模型名称",
+      "type": "String"
+    },
+    {
+      "name": "ai_provider",
+      "title": "AI服务提供商",
+      "type": "String"
+    },
+    {
+      "name": "message_timestamp",
+      "title": "消息时间戳",
+      "type": "DateTime",
+      "format": "timestamp-ms"
+    },
+    {
+      "name": "conversation_status",
+      "title": "对话状态",
+      "type": "String"
+    },
+    {
+      "name": "message_sequence",
+      "title": "消息序号",
+      "type": "Number"
+    },
+    {
+      "name": "token_count",
+      "title": "Token数量",
+      "type": "Number"
+    },
+    {
+      "name": "response_time",
+      "title": "响应时间(毫秒)",
+      "type": "Number"
+    },
+    {
+      "name": "cost_amount",
+      "title": "费用金额",
+      "type": "Number"
+    },
+    {
+      "name": "currency",
+      "title": "货币类型",
+      "type": "String"
+    },
+    {
+      "name": "user_rating",
+      "title": "用户评分",
+      "type": "Number"
+    },
+    {
+      "name": "user_feedback",
+      "title": "用户反馈",
+      "type": "MultiLineString"
+    },
+    {
+      "name": "is_edited",
+      "title": "是否已编辑",
+      "type": "Boolean"
+    },
+    {
+      "name": "edited_timestamp",
+      "title": "编辑时间戳",
+      "type": "DateTime",
+      "format": "timestamp-ms"
+    },
+    {
+      "name": "is_deleted",
+      "title": "是否已删除",
+      "type": "Boolean"
+    },
+    {
+      "name": "deleted_timestamp",
+      "title": "删除时间戳",
+      "type": "DateTime",
+      "format": "timestamp-ms"
+    },
+    {
+      "name": "parent_message_id",
+      "title": "父消息ID",
+      "type": "String"
+    },
+    {
+      "name": "thread_id",
+      "title": "对话线程ID",
+      "type": "String"
+    },
+    {
+      "name": "context_length",
+      "title": "上下文长度",
+      "type": "Number"
+    },
+    {
+      "name": "model_parameters",
+      "title": "模型参数",
+      "type": "Object",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "error_code",
+      "title": "错误代码",
+      "type": "String"
+    },
+    {
+      "name": "error_message",
+      "title": "错误信息",
+      "type": "MultiLineString"
+    },
+    {
+      "name": "retry_count",
+      "title": "重试次数",
+      "type": "Number"
+    },
+    {
+      "name": "is_cached",
+      "title": "是否缓存",
+      "type": "Boolean"
+    },
+    {
+      "name": "cache_hit",
+      "title": "缓存命中",
+      "type": "Boolean"
+    },
+    {
+      "name": "metadata",
+      "title": "元数据",
+      "type": "Object",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "tags",
+      "title": "标签",
+      "type": "Array",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "source",
+      "title": "来源渠道",
+      "type": "String"
+    },
+    {
+      "name": "device_info",
+      "title": "设备信息",
+      "type": "Object",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "location_info",
+      "title": "位置信息",
+      "type": "Object",
+      "items": {
+        "type": "String"
+      }
+    }
+  ]
+}
+  

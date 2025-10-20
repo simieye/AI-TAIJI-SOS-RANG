@@ -1,0 +1,178 @@
+
+{
+  "name": "ai_model_config",
+  "title": "AI模型配置",
+  "schemas": [
+    {
+      "name": "model_name",
+      "title": "模型名称",
+      "type": "String"
+    },
+    {
+      "name": "model_type",
+      "title": "模型类型",
+      "type": "String"
+    },
+    {
+      "name": "model_version",
+      "title": "模型版本",
+      "type": "String"
+    },
+    {
+      "name": "api_key",
+      "title": "API密钥",
+      "type": "String"
+    },
+    {
+      "name": "api_secret",
+      "title": "API密钥",
+      "type": "String"
+    },
+    {
+      "name": "api_endpoint",
+      "title": "API端点",
+      "type": "Url"
+    },
+    {
+      "name": "provider",
+      "title": "服务提供商",
+      "type": "String"
+    },
+    {
+      "name": "model_parameters",
+      "title": "模型参数配置",
+      "type": "Object",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "max_tokens",
+      "title": "最大令牌数",
+      "type": "Number"
+    },
+    {
+      "name": "temperature",
+      "title": "温度参数",
+      "type": "Number"
+    },
+    {
+      "name": "top_p",
+      "title": "Top-P参数",
+      "type": "Number"
+    },
+    {
+      "name": "frequency_penalty",
+      "title": "频率惩罚",
+      "type": "Number"
+    },
+    {
+      "name": "presence_penalty",
+      "title": "存在惩罚",
+      "type": "Number"
+    },
+    {
+      "name": "timeout",
+      "title": "超时时间(秒)",
+      "type": "Number"
+    },
+    {
+      "name": "retry_count",
+      "title": "重试次数",
+      "type": "Number"
+    },
+    {
+      "name": "rate_limit",
+      "title": "速率限制",
+      "type": "Number"
+    },
+    {
+      "name": "status",
+      "title": "配置状态",
+      "type": "String"
+    },
+    {
+      "name": "environment",
+      "title": "环境类型",
+      "type": "String"
+    },
+    {
+      "name": "description",
+      "title": "模型描述",
+      "type": "MultiLineString"
+    },
+    {
+      "name": "usage_count",
+      "title": "使用次数",
+      "type": "Number"
+    },
+    {
+      "name": "last_used",
+      "title": "最后使用时间",
+      "type": "DateTime",
+      "format": "timestamp-ms"
+    },
+    {
+      "name": "cost_per_request",
+      "title": "每次请求成本",
+      "type": "Number"
+    },
+    {
+      "name": "monthly_budget",
+      "title": "月度预算",
+      "type": "Number"
+    },
+    {
+      "name": "current_month_cost",
+      "title": "当月费用",
+      "type": "Number"
+    },
+    {
+      "name": "webhook_url",
+      "title": "回调地址",
+      "type": "Url"
+    },
+    {
+      "name": "custom_headers",
+      "title": "自定义请求头",
+      "type": "Object",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "encryption_enabled",
+      "title": "启用加密",
+      "type": "Boolean"
+    },
+    {
+      "name": "logging_enabled",
+      "title": "启用日志",
+      "type": "Boolean"
+    },
+    {
+      "name": "cache_enabled",
+      "title": "启用缓存",
+      "type": "Boolean"
+    },
+    {
+      "name": "cache_ttl",
+      "title": "缓存过期时间(秒)",
+      "type": "Number"
+    },
+    {
+      "name": "tags",
+      "title": "标签",
+      "type": "Array",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "notes",
+      "title": "备注信息",
+      "type": "MultiLineString"
+    }
+  ]
+}
+  
