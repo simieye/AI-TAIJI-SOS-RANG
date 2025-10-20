@@ -89,6 +89,15 @@ export default function ConsultationChat(props) {
     color: 'text-cyan-500',
     capabilities: ['长文本理解', '知识问答', '代码生成', '创意写作'],
     status: 'available'
+  }, {
+    id: 'wenxin',
+    name: '文心一言',
+    provider: '百度',
+    description: '中文大模型',
+    icon: Brain,
+    color: 'text-indigo-500',
+    capabilities: ['中文理解', '知识问答', '文本创作', '逻辑推理'],
+    status: 'available'
   }];
   // 人工客服配置
   const defaultAgents = [{
@@ -316,15 +325,19 @@ export default function ConsultationChat(props) {
     setIsTyping(true);
     try {
       if (chatMode === 'ai') {
-        // AI模式
-        const aiResponse = await callAIModel(inputMessage.trim(), selectedModel);
+        // AI模式 - 调用云函数
+        const currentUser = $w.auth.currentUser;
+        const sessionId = consultationId || 'session_' + Date.now();
+        const aiResponse = await callAIModel(inputMessage.trim(), selectedModel, currentUser.userId, sessionId);
         const aiMessage = {
           id: (Date.now() + 1).toString(),
           type: 'ai',
-          content: aiResponse,
+          content: aiResponse.content,
           timestamp: Date.now(),
           model: selectedModel,
-          mode: 'ai'
+          mode: 'ai',
+          usage: aiResponse.usage,
+          cost: aiResponse.cost
         };
         setMessages(prev => [...prev, aiMessage]);
         await saveMessageToDatabase(userMessage, aiMessage);
@@ -357,33 +370,35 @@ export default function ConsultationChat(props) {
       setIsTyping(false);
     }
   };
-  const callAIModel = async (message, modelId) => {
+  const callAIModel = async (message, modelId, userId, sessionId) => {
     try {
       // 记录开始时间
       const startTime = Date.now();
 
-      // 调用AI模型API
-      const modelConfig = availableModels.find(m => m.id === modelId) || defaultModels.find(m => m.id === modelId);
+      // 准备消息格式
+      const messages = [{
+        role: 'user',
+        content: message
+      }];
 
-      // 模拟API延迟
-      await new Promise(resolve => setTimeout(resolve, 1000 + Math.random() * 2000));
-
-      // 根据不同模型返回不同风格的回复
-      const responses = {
-        'gpt-4': `我是GPT-4，关于您的问题"${message}"，我为您提供以下解答：\n\nAI太极·SOS RING是一款集成了多种智能功能的可穿戴设备。它具备睡眠监测、SOS紧急呼叫、健康数据追踪等功能。电池续航时间根据使用情况可达3-7天。\n\n如果您还有其他问题，请随时询问！`,
-        'claude-3': `感谢您的咨询。关于"${message}"这个问题，让我为您详细说明：\n\nAI太极智能戒指采用先进的传感器技术，能够实时监测您的健康状况。设备支持IP68级防水，日常使用无需担心。\n\n关于您关心的具体功能，我建议您可以查看产品说明书或联系我们的技术支持团队。`,
-        'gemini-pro': `基于您的问题"${message}"，我来为您介绍AI太极戒指的核心功能：\n\n🔋 **电池续航**：正常使用情况下可达5-7天\n💤 **睡眠监测**：深度分析睡眠质量\n🚨 **SOS功能**：紧急情况下一键求助\n📊 **健康追踪**：心率、血氧、步数等数据\n\n有什么特定的功能您想了解更多吗？`,
-        'qwen-max': `您好！关于"${message}"的问题，我来为您解答：\n\nAI太极·SOS RING智能戒指是一款专为健康生活设计的智能穿戴设备。主要特点包括：\n\n• 续航时间：3-7天（根据使用频率）\n• 防水等级：IP68\n• 连接方式：蓝牙5.0\n• 兼容性：iOS 12+ / Android 8+\n\n如果您需要更详细的技术参数，我可以为您提供完整的产品规格表。`,
-        'baichuan2': `关于您提到的"${message}"，我来为您详细介绍：\n\nAI太极智能戒指作为新一代健康穿戴设备，具有以下优势：\n\n1. **长续航**：采用低功耗设计，正常使用可达一周\n2. **精准监测**：医疗级传感器，数据准确可靠\n3. **智能提醒**：久坐提醒、用药提醒等贴心功能\n4. **紧急救助**：SOS功能关键时刻保护您的安全\n\n还有什么想了解的吗？`,
-        'yi-large': `针对您的问题"${message}"，我为您提供专业的解答：\n\nAI太极·SOS RING集成了多项创新技术：\n\n⚡ **性能特点**：\n- 处理器：低功耗ARM芯片\n- 内存：512MB RAM + 4GB存储\n- 传感器：心率、血氧、加速度计\n\n🔋 **电源管理**：\n- 电池容量：50mAh\n- 充电时间：1-2小时\n- 续航：3-7天\n\n需要了解更多技术细节吗？`
-      };
-      const response = responses[modelId] || `我是${modelConfig?.name}，关于您的问题"${message}"，我正在为您查询相关信息，请稍等...`;
-
-      // 记录使用统计
-      const endTime = Date.now();
-      const responseTime = endTime - startTime;
-      await recordAIUsage(modelId, message, response, responseTime);
-      return response;
+      // 调用AI路由云函数
+      const result = await $w.cloud.callFunction({
+        name: 'ai-router',
+        data: {
+          model: modelId,
+          messages: messages,
+          temperature: 0.7,
+          maxTokens: 2000,
+          userId: userId,
+          sessionId: sessionId,
+          fallbackEnabled: true
+        }
+      });
+      if (result.result && result.result.success) {
+        return result.result.data;
+      } else {
+        throw new Error(result.result?.error || 'AI模型调用失败');
+      }
     } catch (error) {
       console.error('调用AI模型失败:', error);
       throw error;
@@ -403,55 +418,6 @@ export default function ConsultationChat(props) {
       setWaitingForAgent(false);
       throw error;
     }
-  };
-  const recordAIUsage = async (modelId, inputMessage, response, responseTime) => {
-    try {
-      const currentUser = $w.auth.currentUser;
-      if (!currentUser) return;
-
-      // 计算token数量（简化计算）
-      const inputTokens = Math.ceil(inputMessage.length / 4);
-      const outputTokens = Math.ceil(response.length / 4);
-      const totalTokens = inputTokens + outputTokens;
-
-      // 保存使用记录
-      await $w.cloud.callDataSource({
-        dataSourceName: 'ai_conversation_record',
-        methodName: 'wedaCreateV2',
-        params: {
-          data: {
-            user_id: currentUser.userId,
-            session_id: consultationId || 'session_' + Date.now(),
-            message_id: 'msg_' + Date.now(),
-            message_type: 'ai_response',
-            message_content: response,
-            ai_model_id: modelId,
-            ai_model_name: availableModels.find(m => m.id === modelId)?.name || modelId,
-            ai_provider: availableModels.find(m => m.id === modelId)?.provider || 'Unknown',
-            message_timestamp: new Date().toISOString(),
-            conversation_status: 'active',
-            token_count: totalTokens,
-            response_time: responseTime,
-            cost_amount: calculateCost(totalTokens, modelId),
-            currency: 'USD'
-          }
-        }
-      });
-    } catch (error) {
-      console.error('记录AI使用失败:', error);
-    }
-  };
-  const calculateCost = (tokens, modelId) => {
-    // 简化的费用计算
-    const costPerToken = {
-      'gpt-4': 0.00003,
-      'claude-3': 0.000025,
-      'gemini-pro': 0.00002,
-      'qwen-max': 0.000015,
-      'baichuan2': 0.000015,
-      'yi-large': 0.000018
-    };
-    return tokens * (costPerToken[modelId] || 0.00002);
   };
   const saveMessageToDatabase = async (userMessage, aiMessage) => {
     try {
@@ -727,6 +693,7 @@ export default function ConsultationChat(props) {
                           <span>{new Date(message.timestamp).toLocaleTimeString()}</span>
                           {message.model && <span>{message.model}</span>}
                           {message.agent && <span>{message.agent.name}</span>}
+                          {message.usage && <span>{message.usage.totalTokens} tokens</span>}
                           <div className="flex items-center space-x-2">
                             <button onClick={() => handleCopyMessage(message.content)} className="hover:text-yellow-500">
                               <Copy className="w-3 h-3" />
