@@ -12,3 +12,5 @@ export * from './PlatformConfig.jsx';
 export * from './LanguageContentEditor.jsx';
 export * from './LanguageSearch.jsx';
 export * from './ABTestManager.jsx';
+export * from './MultilingualSEO.jsx';
+export * from './SitemapGenerator.jsx';
