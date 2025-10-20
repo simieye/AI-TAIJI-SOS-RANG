@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 // @ts-ignore;
 import { Button } from '@/components/ui';
 // @ts-ignore;
-import { ChevronRight, Shield, Moon, Activity, Cpu, Database, Globe, Zap, Lock, Download, FileText, Calendar, User, Mail, CheckCircle, Eye, Globe2, Loader, Clock, BookOpen, Languages, ExternalLink, X } from 'lucide-react';
+import { ChevronRight, Shield, Moon, Activity, Cpu, Database, Globe, Zap, Lock, Download, FileText, Calendar, User, Mail, CheckCircle, Eye, Globe2, Loader, Clock, BookOpen, Languages, ExternalLink, X, Share2, Facebook, Twitter, Linkedin, Link2, Package, CheckSquare, Square } from 'lucide-react';
 
 import { Navigation } from '@/components/Navigation';
 export default function Product(props) {
@@ -12,9 +12,12 @@ export default function Product(props) {
   } = props;
   const [activeLayer, setActiveLayer] = useState(0);
   const [showDownloadModal, setShowDownloadModal] = useState(false);
+  const [showBatchDownloadModal, setShowBatchDownloadModal] = useState(false);
   const [showPreviewModal, setShowPreviewModal] = useState(false);
+  const [showShareModal, setShowShareModal] = useState(false);
   const [downloadStarted, setDownloadStarted] = useState(false);
   const [downloadProgress, setDownloadProgress] = useState(0);
+  const [batchDownloads, setBatchDownloads] = useState({});
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [agreedToTerms, setAgreedToTerms] = useState(false);
@@ -23,6 +26,10 @@ export default function Product(props) {
   const [selectedVersion, setSelectedVersion] = useState('v1.0');
   const [previewPage, setPreviewPage] = useState(1);
   const [isGeneratingPreview, setIsGeneratingPreview] = useState(false);
+  const [selectedLanguages, setSelectedLanguages] = useState(['zh']);
+  const [selectedVersions, setSelectedVersions] = useState(['v1.0']);
+  const [shareUrl, setShareUrl] = useState('');
+  const [copiedToClipboard, setCopiedToClipboard] = useState(false);
   const layers = [{
     name: '传感层',
     icon: Activity,
@@ -433,8 +440,19 @@ AI Taiji·SOS RING
     const pages = content.split('\n\n');
     return pages[page - 1] || '';
   };
+  useEffect(() => {
+    // 生成分享链接
+    const currentUrl = window.location.href;
+    setShareUrl(`${currentUrl}#whitepaper`);
+  }, []);
   const handleDownloadWhitepaper = () => {
     setShowDownloadModal(true);
+  };
+  const handleBatchDownload = () => {
+    setShowBatchDownloadModal(true);
+  };
+  const handleShareWhitepaper = () => {
+    setShowShareModal(true);
   };
   const handlePreviewWhitepaper = () => {
     setShowPreviewModal(true);
@@ -480,6 +498,102 @@ AI Taiji·SOS RING
       setShowDownloadModal(false);
     }, 3000);
   };
+  const handleBatchDownloadStart = async () => {
+    if (!name || !email || !agreedToTerms) {
+      alert('请填写完整信息并同意条款');
+      return;
+    }
+    setIsSubmitting(true);
+    try {
+      // 保存用户信息到数据库
+      const currentUser = $w.auth.currentUser;
+      if (currentUser) {
+        await $w.cloud.callDataSource({
+          dataSourceName: 'partner_info',
+          methodName: 'wedaCreateV2',
+          params: {
+            data: {
+              name: name,
+              email: email,
+              company: '个人用户',
+              position: '批量下载技术白皮书',
+              phone: '',
+              message: `批量下载AI太极SOS RING产品白皮书 - ${selectedLanguages.join(', ')} - ${selectedVersions.join(', ')}`,
+              cooperation_type: '批量下载',
+              status: 'pending',
+              created_at: new Date().toISOString()
+            }
+          }
+        });
+      }
+
+      // 开始批量下载
+      const downloads = {};
+      for (const version of selectedVersions) {
+        for (const language of selectedLanguages) {
+          const key = `${version}_${language}`;
+          downloads[key] = {
+            version,
+            language,
+            status: 'pending',
+            progress: 0
+          };
+        }
+      }
+      setBatchDownloads(downloads);
+
+      // 模拟批量下载
+      for (const key in downloads) {
+        const item = downloads[key];
+        setBatchDownloads(prev => ({
+          ...prev,
+          [key]: {
+            ...prev[key],
+            status: 'downloading',
+            progress: 0
+          }
+        }));
+
+        // 模拟下载进度
+        for (let i = 0; i <= 100; i += 20) {
+          await new Promise(resolve => setTimeout(resolve, 300));
+          setBatchDownloads(prev => ({
+            ...prev,
+            [key]: {
+              ...prev[key],
+              progress: i
+            }
+          }));
+        }
+
+        // 创建下载
+        const content = whitepaperContent[item.language].content;
+        const blob = new Blob([content], {
+          type: 'text/plain;charset=utf-8'
+        });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = `AI太极_SOS_RING_产品白皮书_${item.language}_${item.version}.txt`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+        setBatchDownloads(prev => ({
+          ...prev,
+          [key]: {
+            ...prev[key],
+            status: 'completed',
+            progress: 100
+          }
+        }));
+      }
+    } catch (error) {
+      console.error('批量下载失败:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   const handleSubmitDownload = async () => {
     if (!name || !email || !agreedToTerms) {
       alert('请填写完整信息并同意条款');
@@ -517,6 +631,41 @@ AI Taiji·SOS RING
       await handleDirectDownload();
     } finally {
       setIsSubmitting(false);
+    }
+  };
+  const handleLanguageToggle = language => {
+    setSelectedLanguages(prev => prev.includes(language) ? prev.filter(l => l !== language) : [...prev, language]);
+  };
+  const handleVersionToggle = version => {
+    setSelectedVersions(prev => prev.includes(version) ? prev.filter(v => v !== version) : [...prev, version]);
+  };
+  const handleSocialShare = platform => {
+    const url = encodeURIComponent(shareUrl);
+    const title = encodeURIComponent('AI太极·SOS RING 智能戒指产品白皮书');
+    const text = encodeURIComponent('了解AI太极·SOS RING智能戒指的最新技术白皮书，探索主权AI时代的健康守护节点。');
+    let shareLink = '';
+    switch (platform) {
+      case 'facebook':
+        shareLink = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+        break;
+      case 'twitter':
+        shareLink = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
+        break;
+      case 'linkedin':
+        shareLink = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+        break;
+      default:
+        return;
+    }
+    window.open(shareLink, '_blank', 'width=600,height=400');
+  };
+  const handleCopyLink = async () => {
+    try {
+      await navigator.clipboard.writeText(shareUrl);
+      setCopiedToClipboard(true);
+      setTimeout(() => setCopiedToClipboard(false), 2000);
+    } catch (error) {
+      console.error('复制链接失败:', error);
     }
   };
   return <div className="min-h-screen bg-black text-white">
@@ -665,14 +814,24 @@ AI Taiji·SOS RING
           <p className="text-xl text-gray-300 mb-12">
             立即预订AI太极·SOS RING，开启智能健康新纪元
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold px-8 py-4 text-lg">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 justify-center">
+            <Button className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold px-6 py-4 text-sm">
               立即预订
             </Button>
-            <Button onClick={handleDownloadWhitepaper} className="border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-black px-8 py-4 text-lg flex items-center">
-              <Download className="w-5 h-5 mr-2" />
-              下载技术白皮书
+            <Button onClick={handleDownloadWhitepaper} className="border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-black px-6 py-4 text-sm flex items-center justify-center">
+              <Download className="w-4 h-4 mr-2" />
+              单个下载
             </Button>
+            <Button onClick={handleBatchDownload} className="border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white px-6 py-4 text-sm flex items-center justify-center">
+              <Package className="w-4 h-4 mr-2" />
+              批量下载
+            </Button>
+            <Button onClick={handleShareWhitepaper} className="border-green-500 text-green-500 hover:bg-green-500 hover:text-white px-6 py-4 text-sm flex items-center justify-center">
+              <Share2 className="w-4 h-4 mr-2" />
+              分享白皮书
+            </Button>
+          </div>
+          <div className="mt-6">
             <Button onClick={handlePreviewWhitepaper} className="border-gray-500 text-gray-400 hover:bg-gray-800 hover:text-white px-8 py-4 text-lg flex items-center">
               <Eye className="w-5 h-5 mr-2" />
               预览白皮书
@@ -681,7 +840,7 @@ AI Taiji·SOS RING
         </div>
       </section>
 
-      {/* Download Modal */}
+      {/* Single Download Modal */}
       {showDownloadModal && <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
           <div className="bg-gray-900 rounded-xl border border-gray-800 w-full max-w-md">
             <div className="p-6">
@@ -781,6 +940,205 @@ AI Taiji·SOS RING
           </div>
         </div>}
 
+      {/* Batch Download Modal */}
+      {showBatchDownloadModal && <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="bg-gray-900 rounded-xl border border-gray-800 w-full max-w-2xl">
+            <div className="p-6">
+              <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center">
+                  <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mr-4">
+                    <Package className="w-6 h-6 text-blue-500" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-blue-500">批量下载技术白皮书</h3>
+                    <p className="text-sm text-gray-400">选择多个语言版本和版本进行批量下载</p>
+                  </div>
+                </div>
+                <button onClick={() => setShowBatchDownloadModal(false)} className="text-gray-400 hover:text-white">
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+
+              {Object.keys(batchDownloads).length === 0 ? <>
+                  {/* Language Selection */}
+                  <div className="mb-6">
+                    <label className="block text-sm font-medium text-gray-300 mb-3">
+                      <Languages className="w-4 h-4 inline mr-2" />
+                      选择语言版本
+                    </label>
+                    <div className="grid grid-cols-2 gap-3">
+                      {languages.map(lang => <button key={lang.code} onClick={() => handleLanguageToggle(lang.code)} className={`p-3 rounded-lg border-2 transition-all ${selectedLanguages.includes(lang.code) ? 'border-blue-500 bg-blue-500/20' : 'border-gray-700 hover:border-gray-600'}`}>
+                          <div className="flex items-center">
+                            {selectedLanguages.includes(lang.code) ? <CheckSquare className="w-5 h-5 text-blue-500 mr-3" /> : <Square className="w-5 h-5 text-gray-400 mr-3" />}
+                            <span className="text-lg mr-2">{lang.flag}</span>
+                            <span className="text-white">{lang.name}</span>
+                          </div>
+                        </button>)}
+                    </div>
+                  </div>
+
+                  {/* Version Selection */}
+                  <div className="mb-6">
+                    <label className="block text-sm font-medium text-gray-300 mb-3">
+                      <Clock className="w-4 h-4 inline mr-2" />
+                      选择版本
+                    </label>
+                    <div className="grid grid-cols-2 gap-3">
+                      {versions.map(version => <button key={version.id} onClick={() => handleVersionToggle(version.id)} className={`p-3 rounded-lg border-2 transition-all ${selectedVersions.includes(version.id) ? 'border-blue-500 bg-blue-500/20' : 'border-gray-700 hover:border-gray-600'}`}>
+                          <div className="flex items-center">
+                            {selectedVersions.includes(version.id) ? <CheckSquare className="w-5 h-5 text-blue-500 mr-3" /> : <Square className="w-5 h-5 text-gray-400 mr-3" />}
+                            <div className="text-left">
+                              <div className="text-white font-medium">{version.name}</div>
+                              <div className="text-gray-400 text-sm">{version.date}</div>
+                            </div>
+                          </div>
+                        </button>)}
+                    </div>
+                  </div>
+
+                  {/* User Information */}
+                  <div className="space-y-4 mb-6">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-300 mb-2">
+                        <User className="w-4 h-4 inline mr-2" />
+                        姓名
+                      </label>
+                      <input type="text" value={name} onChange={e => setName(e.target.value)} className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-blue-500" placeholder="请输入您的姓名" />
+                    </div>
+                    
+                    <div>
+                      <label className="block text-sm font-medium text-gray-300 mb-2">
+                        <Mail className="w-4 h-4 inline mr-2" />
+                        邮箱
+                      </label>
+                      <input type="email" value={email} onChange={e => setEmail(e.target.value)} className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-blue-500" placeholder="请输入您的邮箱" />
+                    </div>
+
+                    <div className="flex items-start">
+                      <input type="checkbox" id="batch-terms" checked={agreedToTerms} onChange={e => setAgreedToTerms(e.target.checked)} className="mt-1 mr-3" />
+                      <label htmlFor="batch-terms" className="text-sm text-gray-300">
+                        我同意接收AI太极的产品更新和技术资讯
+                      </label>
+                    </div>
+                  </div>
+
+                  <div className="flex space-x-3">
+                    <Button onClick={() => setShowBatchDownloadModal(false)} variant="outline" className="flex-1 border-gray-700 text-gray-400 hover:border-gray-600 hover:text-white">
+                      取消
+                    </Button>
+                    <Button onClick={handleBatchDownloadStart} disabled={isSubmitting || !name || !email || !agreedToTerms || selectedLanguages.length === 0 || selectedVersions.length === 0} className="flex-1 bg-blue-500 hover:bg-blue-600 text-white">
+                      {isSubmitting ? '提交中...' : `开始批量下载 (${selectedLanguages.length * selectedVersions.length} 个文件)`}
+                    </Button>
+                  </div>
+                </> : <>
+                  {/* Download Progress */}
+                  <div className="space-y-4">
+                    <h4 className="text-lg font-bold text-blue-500 mb-4">下载进度</h4>
+                    {Object.entries(batchDownloads).map(([key, item]) => {
+                const lang = languages.find(l => l.code === item.language);
+                const version = versions.find(v => v.id === item.version);
+                return <div key={key} className="bg-gray-800 rounded-lg p-4">
+                        <div className="flex items-center justify-between mb-2">
+                          <div className="flex items-center">
+                            <span className="mr-2">{lang?.flag}</span>
+                            <span className="text-white font-medium">{lang?.name} - {version?.name}</span>
+                          </div>
+                          <div className="flex items-center">
+                            {item.status === 'completed' ? <CheckCircle className="w-5 h-5 text-green-500" /> : item.status === 'downloading' ? <Loader className="w-5 h-5 text-blue-500 animate-spin" /> : <Clock className="w-5 h-5 text-gray-400" />}
+                            <span className="ml-2 text-sm text-gray-400">{item.progress}%</span>
+                          </div>
+                        </div>
+                        {item.status === 'downloading' && <div className="w-full bg-gray-700 rounded-full h-2">
+                            <div className="bg-blue-500 h-2 rounded-full transition-all duration-300" style={{
+                      width: `${item.progress}%`
+                    }}></div>
+                          </div>}
+                      </div>;
+              })}
+                  </div>
+                  
+                  {Object.values(batchDownloads).every(item => item.status === 'completed') && <div className="mt-6 text-center">
+                      <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <CheckCircle className="w-8 h-8 text-green-500" />
+                      </div>
+                      <h4 className="text-lg font-bold text-green-500 mb-2">批量下载完成！</h4>
+                      <p className="text-sm text-gray-400 mb-4">所有选定的白皮书已下载到您的设备</p>
+                      <Button onClick={() => {
+                setShowBatchDownloadModal(false);
+                setBatchDownloads({});
+              }} className="bg-green-500 hover:bg-green-600 text-white">
+                        完成
+                      </Button>
+                    </div>}
+                </>}
+            </div>
+          </div>
+        </div>}
+
+      {/* Share Modal */}
+      {showShareModal && <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="bg-gray-900 rounded-xl border border-gray-800 w-full max-w-md">
+            <div className="p-6">
+              <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center">
+                  <div className="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mr-4">
+                    <Share2 className="w-6 h-6 text-green-500" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-green-500">分享技术白皮书</h3>
+                    <p className="text-sm text-gray-400">分享AI太极·SOS RING产品白皮书</p>
+                  </div>
+                </div>
+                <button onClick={() => setShowShareModal(false)} className="text-gray-400 hover:text-white">
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+
+              {/* Social Media Share */}
+              <div className="mb-6">
+                <h4 className="text-sm font-medium text-gray-300 mb-3">社交媒体分享</h4>
+                <div className="grid grid-cols-3 gap-3">
+                  <button onClick={() => handleSocialShare('facebook')} className="p-3 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors">
+                    <Facebook className="w-6 h-6 text-white mx-auto" />
+                    <span className="text-xs text-white mt-1 block">Facebook</span>
+                  </button>
+                  <button onClick={() => handleSocialShare('twitter')} className="p-3 bg-sky-500 hover:bg-sky-600 rounded-lg transition-colors">
+                    <Twitter className="w-6 h-6 text-white mx-auto" />
+                    <span className="text-xs text-white mt-1 block">Twitter</span>
+                  </button>
+                  <button onClick={() => handleSocialShare('linkedin')} className="p-3 bg-blue-700 hover:bg-blue-800 rounded-lg transition-colors">
+                    <Linkedin className="w-6 h-6 text-white mx-auto" />
+                    <span className="text-xs text-white mt-1 block">LinkedIn</span>
+                  </button>
+                </div>
+              </div>
+
+              {/* Link Share */}
+              <div className="mb-6">
+                <h4 className="text-sm font-medium text-gray-300 mb-3">链接分享</h4>
+                <div className="flex space-x-2">
+                  <input type="text" value={shareUrl} readOnly className="flex-1 bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white text-sm" />
+                  <Button onClick={handleCopyLink} className="bg-green-500 hover:bg-green-600 text-white px-4 py-3">
+                    {copiedToClipboard ? <CheckCircle className="w-5 h-5" /> : <Link2 className="w-5 h-5" />}
+                  </Button>
+                </div>
+                {copiedToClipboard && <p className="text-sm text-green-500 mt-2">链接已复制到剪贴板</p>}
+              </div>
+
+              {/* QR Code */}
+              <div className="text-center">
+                <div className="w-32 h-32 bg-white rounded-lg mx-auto mb-4 flex items-center justify-center">
+                  <div className="text-black text-center">
+                    <div className="w-24 h-24 bg-gray-200 rounded mx-auto mb-2"></div>
+                    <p className="text-xs">QR Code</p>
+                  </div>
+                </div>
+                <p className="text-sm text-gray-400">扫描二维码访问白皮书</p>
+              </div>
+            </div>
+          </div>
+        </div>}
+
       {/* Preview Modal */}
       {showPreviewModal && <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
           <div className="bg-gray-900 rounded-xl border border-gray-800 w-full max-w-4xl max-h-[90vh] flex flex-col">
@@ -862,6 +1220,13 @@ AI Taiji·SOS RING
               }} className="border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-black">
                     <Download className="w-4 h-4 mr-2" />
                     下载完整版
+                  </Button>
+                  <Button onClick={() => {
+                setShowPreviewModal(false);
+                handleShareWhitepaper();
+              }} className="border-green-500 text-green-500 hover:bg-green-500 hover:text-white">
+                    <Share2 className="w-4 h-4 mr-2" />
+                    分享白皮书
                   </Button>
                   <Button onClick={() => window.open('https://www.aitaiji.com', '_blank')} className="bg-yellow-500 hover:bg-yellow-600 text-black">
                     <ExternalLink className="w-4 h-4 mr-2" />
