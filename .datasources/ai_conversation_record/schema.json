@@ -1,7 +1,7 @@
 
 {
   "name": "ai_conversation_record",
-  "title": "AI对话记录",
+  "title": "AI客服对话记录",
   "schemas": [
     {
       "name": "conversation_id",

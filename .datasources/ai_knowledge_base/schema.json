@@ -1,0 +1,820 @@
+
+{
+  "name": "ai_knowledge_base",
+  "title": "AI客服知识库",
+  "schemas": [
+    {
+      "name": "knowledge_id",
+      "title": "知识ID",
+      "type": "String"
+    },
+    {
+      "name": "title",
+      "title": "标题",
+      "type": "String"
+    },
+    {
+      "name": "content",
+      "title": "内容",
+      "type": "MultiLineString"
+    },
+    {
+      "name": "category",
+      "title": "分类",
+      "type": "String"
+    },
+    {
+      "name": "subcategory",
+      "title": "子分类",
+      "type": "String"
+    },
+    {
+      "name": "keywords",
+      "title": "关键词",
+      "type": "Array",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "tags",
+      "title": "标签",
+      "type": "Array",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "related_products",
+      "title": "相关产品",
+      "type": "Array",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "content_type",
+      "title": "内容类型",
+      "type": "String"
+    },
+    {
+      "name": "difficulty_level",
+      "title": "难度等级",
+      "type": "String"
+    },
+    {
+      "name": "priority",
+      "title": "优先级",
+      "type": "Number"
+    },
+    {
+      "name": "language",
+      "title": "语言",
+      "type": "String"
+    },
+    {
+      "name": "region",
+      "title": "地区",
+      "type": "String"
+    },
+    {
+      "name": "author",
+      "title": "作者",
+      "type": "String"
+    },
+    {
+      "name": "reviewer",
+      "title": "审核人",
+      "type": "String"
+    },
+    {
+      "name": "status",
+      "title": "状态",
+      "type": "String"
+    },
+    {
+      "name": "version",
+      "title": "版本号",
+      "type": "String"
+    },
+    {
+      "name": "created_at",
+      "title": "创建时间",
+      "type": "DateTime",
+      "format": "timestamp-ms"
+    },
+    {
+      "name": "updated_at",
+      "title": "更新时间",
+      "type": "DateTime",
+      "format": "timestamp-ms"
+    },
+    {
+      "name": "last_reviewed_at",
+      "title": "最后审核时间",
+      "type": "DateTime",
+      "format": "timestamp-ms"
+    },
+    {
+      "name": "published_at",
+      "title": "发布时间",
+      "type": "DateTime",
+      "format": "timestamp-ms"
+    },
+    {
+      "name": "expiry_date",
+      "title": "过期时间",
+      "type": "DateTime",
+      "format": "timestamp-ms"
+    },
+    {
+      "name": "usage_count",
+      "title": "使用次数",
+      "type": "Number"
+    },
+    {
+      "name": "usage_frequency",
+      "title": "使用频率",
+      "type": "Number"
+    },
+    {
+      "name": "effectiveness_score",
+      "title": "有效性评分",
+      "type": "Number"
+    },
+    {
+      "name": "user_rating",
+      "title": "用户评分",
+      "type": "Number"
+    },
+    {
+      "name": "feedback_count",
+      "title": "反馈数量",
+      "type": "Number"
+    },
+    {
+      "name": "positive_feedback",
+      "title": "正面反馈数",
+      "type": "Number"
+    },
+    {
+      "name": "negative_feedback",
+      "title": "负面反馈数",
+      "type": "Number"
+    },
+    {
+      "name": "view_count",
+      "title": "查看次数",
+      "type": "Number"
+    },
+    {
+      "name": "search_count",
+      "title": "搜索次数",
+      "type": "Number"
+    },
+    {
+      "name": "last_used_at",
+      "title": "最后使用时间",
+      "type": "DateTime",
+      "format": "timestamp-ms"
+    },
+    {
+      "name": "embedding_vector",
+      "title": "嵌入向量",
+      "type": "Array",
+      "items": {
+        "type": "Number"
+      }
+    },
+    {
+      "name": "embedding_model",
+      "title": "嵌入模型",
+      "type": "String"
+    },
+    {
+      "name": "embedding_version",
+      "title": "嵌入版本",
+      "type": "String"
+    },
+    {
+      "name": "chunk_count",
+      "title": "分块数量",
+      "type": "Number"
+    },
+    {
+      "name": "content_chunks",
+      "title": "内容分块",
+      "type": "Array",
+      "items": {
+        "type": "Object"
+      }
+    },
+    {
+      "name": "summary",
+      "title": "摘要",
+      "type": "String"
+    },
+    {
+      "name": "question_examples",
+      "title": "问题示例",
+      "type": "Array",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "answer_template",
+      "title": "回答模板",
+      "type": "MultiLineString"
+    },
+    {
+      "name": "related_knowledge",
+      "title": "相关知识",
+      "type": "Array",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "external_links",
+      "title": "外部链接",
+      "type": "Array",
+      "items": {
+        "type": "Object"
+      }
+    },
+    {
+      "name": "attachments",
+      "title": "附件",
+      "type": "Array",
+      "items": {
+        "type": "Object"
+      }
+    },
+    {
+      "name": "images",
+      "title": "图片",
+      "type": "Array",
+      "items": {
+        "type": "Object"
+      }
+    },
+    {
+      "name": "videos",
+      "title": "视频",
+      "type": "Array",
+      "items": {
+        "type": "Object"
+      }
+    },
+    {
+      "name": "references",
+      "title": "参考资料",
+      "type": "Array",
+      "items": {
+        "type": "Object"
+      }
+    },
+    {
+      "name": "source",
+      "title": "来源",
+      "type": "String"
+    },
+    {
+      "name": "source_url",
+      "title": "来源URL",
+      "type": "String"
+    },
+    {
+      "name": "license",
+      "title": "许可证",
+      "type": "String"
+    },
+    {
+      "name": "access_level",
+      "title": "访问级别",
+      "type": "String"
+    },
+    {
+      "name": "target_audience",
+      "title": "目标受众",
+      "type": "Array",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "use_cases",
+      "title": "使用场景",
+      "type": "Array",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "business_context",
+      "title": "业务上下文",
+      "type": "String"
+    },
+    {
+      "name": "department",
+      "title": "部门",
+      "type": "String"
+    },
+    {
+      "name": "product_line",
+      "title": "产品线",
+      "type": "String"
+    },
+    {
+      "name": "technical_specifications",
+      "title": "技术规格",
+      "type": "Object",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "troubleshooting_steps",
+      "title": "故障排除步骤",
+      "type": "Array",
+      "items": {
+        "type": "Object"
+      }
+    },
+    {
+      "name": "faq_items",
+      "title": "FAQ项目",
+      "type": "Array",
+      "items": {
+        "type": "Object"
+      }
+    },
+    {
+      "name": "tutorial_steps",
+      "title": "教程步骤",
+      "type": "Array",
+      "items": {
+        "type": "Object"
+      }
+    },
+    {
+      "name": "best_practices",
+      "title": "最佳实践",
+      "type": "Array",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "common_mistakes",
+      "title": "常见错误",
+      "type": "Array",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "tips_and_tricks",
+      "title": "技巧和窍门",
+      "type": "Array",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "limitations",
+      "title": "限制条件",
+      "type": "Array",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "prerequisites",
+      "title": "前置条件",
+      "type": "Array",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "requirements",
+      "title": "要求",
+      "type": "Array",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "compatibility",
+      "title": "兼容性",
+      "type": "Object",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "integration_info",
+      "title": "集成信息",
+      "type": "Object",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "api_references",
+      "title": "API参考",
+      "type": "Array",
+      "items": {
+        "type": "Object"
+      }
+    },
+    {
+      "name": "code_examples",
+      "title": "代码示例",
+      "type": "Array",
+      "items": {
+        "type": "Object"
+      }
+    },
+    {
+      "name": "configuration_guide",
+      "title": "配置指南",
+      "type": "MultiLineString"
+    },
+    {
+      "name": "installation_guide",
+      "title": "安装指南",
+      "type": "MultiLineString"
+    },
+    {
+      "name": "maintenance_guide",
+      "title": "维护指南",
+      "type": "MultiLineString"
+    },
+    {
+      "name": "security_considerations",
+      "title": "安全考虑",
+      "type": "Array",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "performance_notes",
+      "title": "性能说明",
+      "type": "Array",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "scalability_info",
+      "title": "可扩展性信息",
+      "type": "Object",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "monitoring_guide",
+      "title": "监控指南",
+      "type": "MultiLineString"
+    },
+    {
+      "name": "backup_procedures",
+      "title": "备份程序",
+      "type": "Array",
+      "items": {
+        "type": "Object"
+      }
+    },
+    {
+      "name": "recovery_procedures",
+      "title": "恢复程序",
+      "type": "Array",
+      "items": {
+        "type": "Object"
+      }
+    },
+    {
+      "name": "quality_metrics",
+      "title": "质量指标",
+      "type": "Object",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "validation_rules",
+      "title": "验证规则",
+      "type": "Array",
+      "items": {
+        "type": "Object"
+      }
+    },
+    {
+      "name": "test_cases",
+      "title": "测试用例",
+      "type": "Array",
+      "items": {
+        "type": "Object"
+      }
+    },
+    {
+      "name": "quality_score",
+      "title": "质量评分",
+      "type": "Number"
+    },
+    {
+      "name": "completeness_score",
+      "title": "完整性评分",
+      "type": "Number"
+    },
+    {
+      "name": "accuracy_score",
+      "title": "准确性评分",
+      "type": "Number"
+    },
+    {
+      "name": "relevance_score",
+      "title": "相关性评分",
+      "type": "Number"
+    },
+    {
+      "name": "freshness_score",
+      "title": "新鲜度评分",
+      "type": "Number"
+    },
+    {
+      "name": "readability_score",
+      "title": "可读性评分",
+      "type": "Number"
+    },
+    {
+      "name": "technical_accuracy",
+      "title": "技术准确性",
+      "type": "Boolean"
+    },
+    {
+      "name": "fact_checked",
+      "title": "事实核查",
+      "type": "Boolean"
+    },
+    {
+      "name": "peer_reviewed",
+      "title": "同行评审",
+      "type": "Boolean"
+    },
+    {
+      "name": "approved_for_production",
+      "title": "生产环境批准",
+      "type": "Boolean"
+    },
+    {
+      "name": "compliance_status",
+      "title": "合规状态",
+      "type": "String"
+    },
+    {
+      "name": "gdpr_compliant",
+      "title": "GDPR合规",
+      "type": "Boolean"
+    },
+    {
+      "name": "accessibility_compliant",
+      "title": "可访问性合规",
+      "type": "Boolean"
+    },
+    {
+      "name": "search_optimization",
+      "title": "搜索优化",
+      "type": "Object",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "seo_metadata",
+      "title": "SEO元数据",
+      "type": "Object",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "analytics_data",
+      "title": "分析数据",
+      "type": "Object",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "user_engagement_metrics",
+      "title": "用户参与指标",
+      "type": "Object",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "content_performance",
+      "title": "内容性能",
+      "type": "Object",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "ai_model_performance",
+      "title": "AI模型性能",
+      "type": "Object",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "rag_performance",
+      "title": "RAG性能",
+      "type": "Object",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "retrieval_score",
+      "title": "检索评分",
+      "type": "Number"
+    },
+    {
+      "name": "ranking_score",
+      "title": "排名评分",
+      "type": "Number"
+    },
+    {
+      "name": "relevance_feedback",
+      "title": "相关性反馈",
+      "type": "Array",
+      "items": {
+        "type": "Object"
+      }
+    },
+    {
+      "name": "improvement_suggestions",
+      "title": "改进建议",
+      "type": "Array",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "update_frequency",
+      "title": "更新频率",
+      "type": "String"
+    },
+    {
+      "name": "next_review_date",
+      "title": "下次审核日期",
+      "type": "Date",
+      "format": "date"
+    },
+    {
+      "name": "auto_update_enabled",
+      "title": "自动更新启用",
+      "type": "Boolean"
+    },
+    {
+      "name": "sync_status",
+      "title": "同步状态",
+      "type": "String"
+    },
+    {
+      "name": "last_sync_at",
+      "title": "最后同步时间",
+      "type": "DateTime",
+      "format": "timestamp-ms"
+    },
+    {
+      "name": "external_systems",
+      "title": "外部系统",
+      "type": "Array",
+      "items": {
+        "type": "Object"
+      }
+    },
+    {
+      "name": "integration_status",
+      "title": "集成状态",
+      "type": "Object",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "workflow_status",
+      "title": "工作流状态",
+      "type": "String"
+    },
+    {
+      "name": "approval_workflow",
+      "title": "审批工作流",
+      "type": "Array",
+      "items": {
+        "type": "Object"
+      }
+    },
+    {
+      "name": "change_history",
+      "title": "变更历史",
+      "type": "Array",
+      "items": {
+        "type": "Object"
+      }
+    },
+    {
+      "name": "version_history",
+      "title": "版本历史",
+      "type": "Array",
+      "items": {
+        "type": "Object"
+      }
+    },
+    {
+      "name": "archived",
+      "title": "已归档",
+      "type": "Boolean"
+    },
+    {
+      "name": "archive_date",
+      "title": "归档日期",
+      "type": "Date",
+      "format": "date"
+    },
+    {
+      "name": "archive_reason",
+      "title": "归档原因",
+      "type": "String"
+    },
+    {
+      "name": "deprecation_status",
+      "title": "弃用状态",
+      "type": "String"
+    },
+    {
+      "name": "replacement_knowledge",
+      "title": "替换知识",
+      "type": "Array",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "migration_info",
+      "title": "迁移信息",
+      "type": "Object",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "custom_attributes",
+      "title": "自定义属性",
+      "type": "Object",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "metadata",
+      "title": "元数据",
+      "type": "Object",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "notes",
+      "title": "备注",
+      "type": "MultiLineString"
+    },
+    {
+      "name": "internal_comments",
+      "title": "内部评论",
+      "type": "Array",
+      "items": {
+        "type": "Object"
+      }
+    },
+    {
+      "name": "external_comments",
+      "title": "外部评论",
+      "type": "Array",
+      "items": {
+        "type": "Object"
+      }
+    }
+  ]
+}
+  

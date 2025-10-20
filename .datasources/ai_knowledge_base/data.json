@@ -1,0 +1,1245 @@
+
+[
+  {
+    "_id": "1",
+    "knowledge_id": "KB_AI_TAIJI_001",
+    "title": "AI太极SOS RING产品概述",
+    "content": "AI太极SOS RING是一款革命性的智能戒指产品，采用先进的边缘计算架构，实现毫秒级响应和本地数据处理。产品具备睡眠监测、SOS守护、健康追踪等多项功能，是您身边的智能健康管家。\n\n主要特性：\n• 边缘计算技术，保护隐私安全\n• 毫秒级响应速度\n• 5-7天超长续航\n• IP68级防水\n• 蓝牙5.0连接\n• 兼容iOS和Android系统\n\n核心技术：\n• 主权AI架构\n• 多模态传感器融合\n• 实时数据分析\n• 本地模型推理",
+    "category": "产品介绍",
+    "subcategory": "产品概述",
+    "keywords": ["AI太极", "SOS戒指", "智能戒指", "边缘计算", "健康监测"],
+    "tags": ["产品", "概述", "核心技术", "功能特性"],
+    "related_products": ["AI太极SOS RING标准版", "AI太极SOS RING专业版"],
+    "content_type": "产品文档",
+    "difficulty_level": "初级",
+    "priority": 1,
+    "language": "zh",
+    "region": "cn",
+    "author": "产品团队",
+    "reviewer": "技术审核组",
+    "status": "published",
+    "version": "v2.1.0",
+    "created_at": 1729392000000,
+    "updated_at": 1729392000000,
+    "last_reviewed_at": 1729392000000,
+    "published_at": 1729392000000,
+    "expiry_date": null,
+    "usage_count": 1250,
+    "usage_frequency": 8.5,
+    "effectiveness_score": 4.8,
+    "user_rating": 4.7,
+    "feedback_count": 89,
+    "positive_feedback": 82,
+    "negative_feedback": 7,
+    "view_count": 3420,
+    "search_count": 890,
+    "last_used_at": 1729392000000,
+    "embedding_vector": [0.1, 0.2, 0.3, 0.4, 0.5],
+    "embedding_model": "text-embedding-ada-002",
+    "embedding_version": "v1",
+    "chunk_count": 3,
+    "content_chunks": [
+      {
+        "chunk_id": "chunk_001",
+        "content": "AI太极SOS RING是一款革命性的智能戒指产品",
+        "start_index": 0,
+        "end_index": 50
+      }
+    ],
+    "summary": "AI太极SOS RING智能戒指的产品概述，包含主要特性和核心技术介绍",
+    "question_examples": [
+      "AI太极SOS RING是什么产品？",
+      "这个智能戒指有什么功能？",
+      "AI太极戒指的技术特点是什么？"
+    ],
+    "answer_template": "AI太极SOS RING是{产品类型}，主要功能包括{主要功能}，核心技术是{核心技术}。",
+    "related_knowledge": ["KB_AI_TAIJI_002", "KB_AI_TAIJI_003"],
+    "external_links": [
+      {
+        "title": "官方网站",
+        "url": "https://aitaiji.com",
+        "type": "website"
+      }
+    ],
+    "attachments": [],
+    "images": [
+      {
+        "url": "/images/products/sos-ring-overview.jpg",
+        "alt": "AI太极SOS RING产品图",
+        "caption": "AI太极SOS RING智能戒指"
+      }
+    ],
+    "videos": [],
+    "references": [
+      {
+        "title": "产品技术白皮书",
+        "type": "document",
+        "url": "/docs/technical-whitepaper.pdf"
+      }
+    ],
+    "source": "内部文档",
+    "source_url": "",
+    "license": "proprietary",
+    "access_level": "public",
+    "target_audience": ["潜在客户", "现有用户", "技术爱好者"],
+    "use_cases": ["产品咨询", "技术支持", "销售支持"],
+    "business_context": "产品销售和客户支持",
+    "department": "产品部",
+    "product_line": "智能穿戴",
+    "technical_specifications": {
+      "battery_life": "5-7天",
+      "water_resistance": "IP68",
+      "connectivity": "蓝牙5.0",
+      "compatibility": "iOS 12+, Android 8+"
+    },
+    "troubleshooting_steps": [],
+    "faq_items": [
+      {
+        "question": "电池续航时间是多久？",
+        "answer": "正常使用情况下可达5-7天"
+      }
+    ],
+    "tutorial_steps": [],
+    "best_practices": ["定期充电", "保持清洁", "避免撞击"],
+    "common_mistakes": ["长时间不充电", "接触强磁场"],
+    "tips_and_tricks": ["省电模式设置", "快速充电技巧"],
+    "limitations": ["不支持WiFi", "不能独立通话"],
+    "prerequisites": ["智能手机", "AI太极APP"],
+    "requirements": ["iOS 12+或Android 8+", "蓝牙功能"],
+    "compatibility": {
+      "ios": "12.0+",
+      "android": "8.0+",
+      "bluetooth": "5.0+"
+    },
+    "integration_info": {
+      "health_apps": ["Apple Health", "Google Fit"],
+      "smart_home": ["HomeKit", "Google Home"]
+    },
+    "api_references": [],
+    "code_examples": [],
+    "configuration_guide": "",
+    "installation_guide": "1. 下载AI太极APP\n2. 注册账号\n3. 开启蓝牙\n4. 配对戒指",
+    "maintenance_guide": "定期清洁，避免接触化学物质，定期检查电池状态",
+    "security_considerations": ["数据本地存储", "加密传输", "隐私保护"],
+    "performance_notes": ["响应时间<100ms", "功耗优化", "内存管理"],
+    "scalability_info": {
+      "user_capacity": "无限制",
+      "data_storage": "本地存储"
+    },
+    "monitoring_guide": "",
+    "backup_procedures": [],
+    "recovery_procedures": [],
+    "quality_metrics": {
+      "accuracy": "99.5%",
+      "reliability": "99.9%",
+      "user_satisfaction": "4.7/5"
+    },
+    "validation_rules": [],
+    "test_cases": [],
+    "quality_score": 4.8,
+    "completeness_score": 4.5,
+    "accuracy_score": 4.9,
+    "relevance_score": 4.7,
+    "freshness_score": 4.6,
+    "readability_score": 4.8,
+    "technical_accuracy": true,
+    "fact_checked": true,
+    "peer_reviewed": true,
+    "approved_for_production": true,
+    "compliance_status": "compliant",
+    "gdpr_compliant": true,
+    "accessibility_compliant": true,
+    "search_optimization": {
+      "keywords_density": 0.05,
+      "meta_description": "AI太极SOS RING智能戒指产品概述"
+    },
+    "seo_metadata": {
+      "title": "AI太极SOS RING产品概述",
+      "description": "了解AI太极SOS RING智能戒指的功能特性和核心技术",
+      "keywords": "AI太极,SOS戒指,智能戒指"
+    },
+    "analytics_data": {
+      "daily_views": 45,
+      "avg_session_duration": 180,
+      "bounce_rate": 0.25
+    },
+    "user_engagement_metrics": {
+      "likes": 156,
+      "shares": 89,
+      "comments": 23
+    },
+    "content_performance": {
+      "conversion_rate": 0.12,
+      "lead_generation": 34
+    },
+    "ai_model_performance": {
+      "retrieval_accuracy": 0.92,
+      "response_relevance": 0.89
+    },
+    "rag_performance": {
+      "precision": 0.88,
+      "recall": 0.85,
+      "f1_score": 0.86
+    },
+    "retrieval_score": 0.92,
+    "ranking_score": 0.89,
+    "relevance_feedback": [
+      {
+        "user_id": "USER001",
+        "rating": 5,
+        "feedback": "很有帮助的回答",
+        "timestamp": 1729392000000
+      }
+    ],
+    "improvement_suggestions": ["添加更多技术细节", "增加视频教程"],
+    "update_frequency": "monthly",
+    "next_review_date": "2025-02-20",
+    "auto_update_enabled": true,
+    "sync_status": "synced",
+    "last_sync_at": 1729392000000,
+    "external_systems": [
+      {
+        "system": "CRM",
+        "status": "connected",
+        "last_sync": 1729392000000
+      }
+    ],
+    "integration_status": {
+      "cms": "connected",
+      "analytics": "connected",
+      "crm": "connected"
+    },
+    "workflow_status": "completed",
+    "approval_workflow": [
+      {
+        "step": "draft",
+        "status": "completed",
+        "assignee": "产品团队",
+        "completed_at": 1729391800000
+      },
+      {
+        "step": "review",
+        "status": "completed",
+        "assignee": "技术审核组",
+        "completed_at": 1729391900000
+      },
+      {
+        "step": "approve",
+        "status": "completed",
+        "assignee": "产品总监",
+        "completed_at": 1729392000000
+      }
+    ],
+    "change_history": [
+      {
+        "version": "v2.1.0",
+        "date": "2025-01-20",
+        "changes": ["更新技术规格", "添加新功能介绍"],
+        "author": "产品团队"
+      }
+    ],
+    "version_history": [
+      {
+        "version": "v2.1.0",
+        "release_date": "2025-01-20",
+        "description": "添加边缘计算技术介绍"
+      },
+      {
+        "version": "v2.0.0",
+        "release_date": "2024-12-15",
+        "description": "重大功能更新"
+      }
+    ],
+    "archived": false,
+    "archive_date": null,
+    "archive_reason": "",
+    "deprecation_status": "active",
+    "replacement_knowledge": [],
+    "migration_info": {},
+    "custom_attributes": {
+      "product_category": "智能穿戴",
+      "target_market": "消费电子"
+    },
+    "metadata": {
+      "document_type": "product_overview",
+      "content_length": 1250,
+      "reading_time": 5
+    },
+    "notes": "这是AI太极SOS RING的核心产品文档，需要定期更新以反映最新功能",
+    "internal_comments": [
+      {
+        "author": "技术审核组",
+        "comment": "技术规格已验证，准确无误",
+        "timestamp": 1729391900000
+      }
+    ],
+    "external_comments": [],
+    "createdAt": 1729392000000,
+    "updatedAt": 1729392000000
+  },
+  {
+    "_id": "2",
+    "knowledge_id": "KB_AI_TAIJI_002",
+    "title": "AI太极戒指电池续航和充电指南",
+    "content": "AI太极SOS RING采用高效能锂电池，在正常使用情况下可提供5-7天的续航时间。本文档详细介绍电池使用、充电方法和省电技巧。\n\n电池规格：\n• 电池容量：150mAh\n• 充电时间：1-2小时\n• 续航时间：5-7天（正常使用）\n• 充电方式：磁吸式无线充电\n\n充电步骤：\n1. 将充电底座连接USB电源\n2. 将戒指放置在充电底座上\n3. 观察LED指示灯显示充电状态\n4. 充满后LED灯变为绿色\n\n省电技巧：\n• 开启省电模式\n• 减少屏幕亮度\n• 关闭不必要的功能\n• 定期重启设备",
+    "category": "使用指南",
+    "subcategory": "电池管理",
+    "keywords": ["电池续航", "充电", "省电", "电源管理"],
+    "tags": ["电池", "充电", "使用指南", "省电技巧"],
+    "related_products": ["AI太极SOS RING", "AI太极充电底座"],
+    "content_type": "使用指南",
+    "difficulty_level": "初级",
+    "priority": 2,
+    "language": "zh",
+    "region": "cn",
+    "author": "技术支持团队",
+    "reviewer": "硬件工程师",
+    "status": "published",
+    "version": "v1.3.0",
+    "created_at": 1729392100000,
+    "updated_at": 1729392100000,
+    "last_reviewed_at": 1729392100000,
+    "published_at": 1729392100000,
+    "expiry_date": null,
+    "usage_count": 890,
+    "usage_frequency": 6.2,
+    "effectiveness_score": 4.6,
+    "user_rating": 4.5,
+    "feedback_count": 67,
+    "positive_feedback": 58,
+    "negative_feedback": 9,
+    "view_count": 2340,
+    "search_count": 567,
+    "last_used_at": 1729392100000,
+    "embedding_vector": [0.2, 0.3, 0.4, 0.5, 0.6],
+    "embedding_model": "text-embedding-ada-002",
+    "embedding_version": "v1",
+    "chunk_count": 4,
+    "content_chunks": [
+      {
+        "chunk_id": "chunk_002",
+        "content": "AI太极SOS RING采用高效能锂电池",
+        "start_index": 0,
+        "end_index": 45
+      }
+    ],
+    "summary": "AI太极戒指的电池使用、充电方法和省电技巧详细指南",
+    "question_examples": [
+      "AI太极戒指电池能用多久？",
+      "如何给AI太极戒指充电？",
+      "怎样延长电池续航时间？"
+    ],
+    "answer_template": "AI太极戒指电池续航{续航时间}，充电方式为{充电方式}，省电技巧包括{省电技巧}。",
+    "related_knowledge": ["KB_AI_TAIJI_001", "KB_AI_TAIJI_005"],
+    "external_links": [],
+    "attachments": [
+      {
+        "name": "充电指南PDF",
+        "url": "/docs/charging-guide.pdf",
+        "type": "pdf"
+      }
+    ],
+    "images": [
+      {
+        "url": "/images/guides/charging-station.jpg",
+        "alt": "AI太极充电底座",
+        "caption": "磁吸式无线充电底座"
+      }
+    ],
+    "videos": [
+      {
+        "url": "/videos/charging-tutorial.mp4",
+        "title": "AI太极戒指充电教程",
+        "duration": "2:30"
+      }
+    ],
+    "references": [],
+    "source": "技术文档",
+    "source_url": "",
+    "license": "proprietary",
+    "access_level": "public",
+    "target_audience": ["现有用户", "潜在客户"],
+    "use_cases": ["技术支持", "用户培训"],
+    "business_context": "用户支持和服务",
+    "department": "技术支持部",
+    "product_line": "智能穿戴",
+    "technical_specifications": {
+      "battery_capacity": "150mAh",
+      "charging_time": "1-2小时",
+      "battery_life": "5-7天"
+    },
+    "troubleshooting_steps": [
+      {
+        "step": 1,
+        "title": "检查充电底座",
+        "description": "确保充电底座连接正常"
+      },
+      {
+        "step": 2,
+        "title": "清洁充电触点",
+        "description": "用软布清洁戒指和底座的充电触点"
+      }
+    ],
+    "faq_items": [
+      {
+        "question": "充电时戒指发热正常吗？",
+        "answer": "轻微发热是正常现象，如过热请停止充电"
+      }
+    ],
+    "tutorial_steps": [
+      {
+        "step": 1,
+        "title": "连接电源",
+        "description": "将USB线连接充电底座和电源"
+      },
+      {
+        "step": 2,
+        "title": "放置戒指",
+        "description": "将戒指正确放置在充电底座上"
+      }
+    ],
+    "best_practices": ["定期充电", "避免完全放电", "使用原装充电器"],
+    "common_mistakes": ["充电位置不正确", "使用不兼容的充电器"],
+    "tips_and_tricks": ["夜间充电", "充电时取下戒指"],
+    "limitations": ["不支持快充", "低温环境下充电速度慢"],
+    "prerequisites": ["AI太极充电底座", "USB电源"],
+    "requirements": [],
+    "compatibility": {
+      "charger": "磁吸式无线充电底座",
+      "power": "5V/1A"
+    },
+    "integration_info": {},
+    "api_references": [],
+    "code_examples": [],
+    "configuration_guide": "",
+    "installation_guide": "",
+    "maintenance_guide": "每月进行一次完整的充放电循环",
+    "security_considerations": ["避免过热", "使用认证充电器"],
+    "performance_notes": ["充电效率>90%", "电池循环寿命>500次"],
+    "scalability_info": {},
+    "monitoring_guide": "通过APP查看电池状态和充电进度",
+    "backup_procedures": [],
+    "recovery_procedures": [],
+    "quality_metrics": {
+      "charging_efficiency": "92%",
+      "battery_accuracy": "98%"
+    },
+    "validation_rules": [],
+    "test_cases": [],
+    "quality_score": 4.6,
+    "completeness_score": 4.4,
+    "accuracy_score": 4.8,
+    "relevance_score": 4.5,
+    "freshness_score": 4.3,
+    "readability_score": 4.7,
+    "technical_accuracy": true,
+    "fact_checked": true,
+    "peer_reviewed": true,
+    "approved_for_production": true,
+    "compliance_status": "compliant",
+    "gdpr_compliant": true,
+    "accessibility_compliant": true,
+    "search_optimization": {
+      "keywords_density": 0.06,
+      "meta_description": "AI太极戒指电池续航和充电指南"
+    },
+    "seo_metadata": {
+      "title": "AI太极戒指电池续航和充电指南",
+      "description": "详细了解AI太极戒指的电池使用、充电方法和省电技巧",
+      "keywords": "AI太极,电池续航,充电指南"
+    },
+    "analytics_data": {
+      "daily_views": 32,
+      "avg_session_duration": 150,
+      "bounce_rate": 0.20
+    },
+    "user_engagement_metrics": {
+      "likes": 98,
+      "shares": 45,
+      "comments": 12
+    },
+    "content_performance": {
+      "conversion_rate": 0.08,
+      "support_tickets_resolved": 23
+    },
+    "ai_model_performance": {
+      "retrieval_accuracy": 0.89,
+      "response_relevance": 0.87
+    },
+    "rag_performance": {
+      "precision": 0.85,
+      "recall": 0.82,
+      "f1_score": 0.83
+    },
+    "retrieval_score": 0.89,
+    "ranking_score": 0.87,
+    "relevance_feedback": [
+      {
+        "user_id": "USER002",
+        "rating": 4,
+        "feedback": "充电步骤很清楚",
+        "timestamp": 1729392100000
+      }
+    ],
+    "improvement_suggestions": ["添加充电故障排除", "增加视频教程"],
+    "update_frequency": "quarterly",
+    "next_review_date": "2025-04-20",
+    "auto_update_enabled": false,
+    "sync_status": "synced",
+    "last_sync_at": 1729392100000,
+    "external_systems": [],
+    "integration_status": {
+      "cms": "connected",
+      "analytics": "connected"
+    },
+    "workflow_status": "completed",
+    "approval_workflow": [
+      {
+        "step": "draft",
+        "status": "completed",
+        "assignee": "技术支持团队",
+        "completed_at": 1729392000000
+      },
+      {
+        "step": "review",
+        "status": "completed",
+        "assignee": "硬件工程师",
+        "completed_at": 1729392100000
+      }
+    ],
+    "change_history": [
+      {
+        "version": "v1.3.0",
+        "date": "2025-01-20",
+        "changes": ["更新充电时间", "添加省电技巧"],
+        "author": "技术支持团队"
+      }
+    ],
+    "version_history": [
+      {
+        "version": "v1.3.0",
+        "release_date": "2025-01-20",
+        "description": "优化充电指南内容"
+      }
+    ],
+    "archived": false,
+    "archive_date": null,
+    "archive_reason": "",
+    "deprecation_status": "active",
+    "replacement_knowledge": [],
+    "migration_info": {},
+    "custom_attributes": {
+      "support_category": "硬件",
+      "priority_level": "medium"
+    },
+    "metadata": {
+      "document_type": "user_guide",
+      "content_length": 890,
+      "reading_time": 4
+    },
+    "notes": "电池和充电相关的常见问题解答，需要根据硬件更新及时修订",
+    "internal_comments": [
+      {
+        "author": "硬件工程师",
+        "comment": "充电规格已验证，与实际产品一致",
+        "timestamp": 1729392100000
+      }
+    ],
+    "external_comments": [],
+    "createdAt": 1729392100000,
+    "updatedAt": 1729392100000
+  },
+  {
+    "_id": "3",
+    "knowledge_id": "KB_AI_TAIJI_003",
+    "title": "AI太极戒指连接问题和解决方案",
+    "content": "AI太极SOS RING采用蓝牙5.0技术连接智能手机，提供稳定可靠的连接体验。本文档介绍常见连接问题的诊断和解决方法。\n\n连接要求：\n• 智能手机系统：iOS 12+ 或 Android 8+\n• 蓝牙版本：4.0及以上\n• AI太极APP：最新版本\n• 距离范围：10米以内\n\n常见连接问题及解决方案：\n\n1. 无法发现设备\n• 检查蓝牙是否开启\n• 确保戒指电量充足\n• 重启蓝牙功能\n• 重新启动AI太极APP\n\n2. 连接频繁断开\n• 检查距离是否过远\n• 排除信号干扰\n• 更新APP版本\n• 重置戒指连接\n\n3. 数据同步失败\n• 检查网络连接\n• 确认APP权限设置\n• 清除APP缓存\n• 重新登录账号",
+    "category": "故障排除",
+    "subcategory": "连接问题",
+    "keywords": ["连接问题", "蓝牙", "配对", "同步失败"],
+    "tags": ["故障排除", "连接", "蓝牙", "技术支持"],
+    "related_products": ["AI太极SOS RING", "AI太极APP"],
+    "content_type": "故障排除指南",
+    "difficulty_level": "中级",
+    "priority": 3,
+    "language": "zh",
+    "region": "cn",
+    "author": "技术支持团队",
+    "reviewer": "软件工程师",
+    "status": "published",
+    "version": "v1.5.0",
+    "created_at": 1729392200000,
+    "updated_at": 1729392200000,
+    "last_reviewed_at": 1729392200000,
+    "published_at": 1729392200000,
+    "expiry_date": null,
+    "usage_count": 670,
+    "usage_frequency": 4.8,
+    "effectiveness_score": 4.4,
+    "user_rating": 4.3,
+    "feedback_count": 89,
+    "positive_feedback": 72,
+    "negative_feedback": 17,
+    "view_count": 1890,
+    "search_count": 445,
+    "last_used_at": 1729392200000,
+    "embedding_vector": [0.3, 0.4, 0.5, 0.6, 0.7],
+    "embedding_model": "text-embedding-ada-002",
+    "embedding_version": "v1",
+    "chunk_count": 5,
+    "content_chunks": [
+      {
+        "chunk_id": "chunk_003",
+        "content": "AI太极SOS RING采用蓝牙5.0技术连接智能手机",
+        "start_index": 0,
+        "end_index": 48
+      }
+    ],
+    "summary": "AI太极戒指蓝牙连接问题的诊断方法和解决方案",
+    "question_examples": [
+      "AI太极戒指连不上手机怎么办？",
+      "为什么戒指经常断开连接？",
+      "如何解决数据同步失败问题？"
+    ],
+    "answer_template": "连接问题通常由{原因}导致，解决方法包括{解决方法}。",
+    "related_knowledge": ["KB_AI_TAIJI_001", "KB_AI_TAIJI_004"],
+    "external_links": [],
+    "attachments": [],
+    "images": [
+      {
+        "url": "/images/troubleshooting/bluetooth-pairing.jpg",
+        "alt": "蓝牙配对界面",
+        "caption": "AI太极APP蓝牙配对界面"
+      }
+    ],
+    "videos": [
+      {
+        "url": "/videos/connection-troubleshooting.mp4",
+        "title": "连接问题排除教程",
+        "duration": "3:45"
+      }
+    ],
+    "references": [],
+    "source": "技术支持文档",
+    "source_url": "",
+    "license": "proprietary",
+    "access_level": "public",
+    "target_audience": ["现有用户", "技术支持人员"],
+    "use_cases": ["技术支持", "故障诊断"],
+    "business_context": "客户服务和问题解决",
+    "department": "技术支持部",
+    "product_line": "智能穿戴",
+    "technical_specifications": {
+      "bluetooth_version": "5.0",
+      "connection_range": "10米",
+      "compatible_os": "iOS 12+, Android 8+"
+    },
+    "troubleshooting_steps": [
+      {
+        "step": 1,
+        "title": "检查基础设置",
+        "description": "确认蓝牙开启，戒指电量充足"
+      },
+      {
+        "step": 2,
+        "title": "重启设备",
+        "description": "重启手机和戒指，重新尝试连接"
+      },
+      {
+        "step": 3,
+        "title": "重新配对",
+        "description": "在APP中删除设备，重新进行配对"
+      }
+    ],
+    "faq_items": [
+      {
+        "question": "为什么搜索不到戒指？",
+        "answer": "可能是戒指电量不足或蓝牙未开启，请检查这两项设置"
+      }
+    ],
+    "tutorial_steps": [
+      {
+        "step": 1,
+        "title": "开启蓝牙",
+        "description": "在手机设置中开启蓝牙功能"
+      },
+      {
+        "step": 2,
+        "title": "打开APP",
+        "description": "启动AI太极APP并登录"
+      }
+    ],
+    "best_practices": ["保持APP更新", "定期检查连接", "避免干扰源"],
+    "common_mistakes": ["距离过远", "蓝牙版本不兼容", "APP版本过旧"],
+    "tips_and_tricks": ["重启蓝牙解决临时问题", "清除缓存修复同步问题"],
+    "limitations": ["不支持多设备同时连接", "金属环境可能影响信号"],
+    "prerequisites": ["智能手机", "AI太极APP"],
+    "requirements": ["蓝牙4.0+", "iOS 12+或Android 8+"],
+    "compatibility": {
+      "ios": "12.0+",
+      "android": "8.0+",
+      "bluetooth": "4.0+"
+    },
+    "integration_info": {
+      "health_apps": ["Apple Health", "Google Fit"],
+      "notification_systems": ["iOS通知", "Android通知"]
+    },
+    "api_references": [],
+    "code_examples": [],
+    "configuration_guide": "",
+    "installation_guide": "",
+    "maintenance_guide": "定期更新APP固件，保持最佳连接性能",
+    "security_considerations": ["加密连接", "数据隐私保护"],
+    "performance_notes": ["连接建立时间<3秒", "数据传输稳定"],
+    "scalability_info": {},
+    "monitoring_guide": "通过APP查看连接状态和数据同步情况",
+    "backup_procedures": [],
+    "recovery_procedures": [],
+    "quality_metrics": {
+      "connection_success_rate": "95%",
+      "issue_resolution_rate": "88%"
+    },
+    "validation_rules": [],
+    "test_cases": [],
+    "quality_score": 4.4,
+    "completeness_score": 4.2,
+    "accuracy_score": 4.6,
+    "relevance_score": 4.3,
+    "freshness_score": 4.5,
+    "readability_score": 4.4,
+    "technical_accuracy": true,
+    "fact_checked": true,
+    "peer_reviewed": true,
+    "approved_for_production": true,
+    "compliance_status": "compliant",
+    "gdpr_compliant": true,
+    "accessibility_compliant": true,
+    "search_optimization": {
+      "keywords_density": 0.07,
+      "meta_description": "AI太极戒指连接问题诊断和解决方案"
+    },
+    "seo_metadata": {
+      "title": "AI太极戒指连接问题和解决方案",
+      "description": "解决AI太极戒指蓝牙连接问题的详细指南",
+      "keywords": "AI太极,连接问题,蓝牙,故障排除"
+    },
+    "analytics_data": {
+      "daily_views": 28,
+      "avg_session_duration": 200,
+      "bounce_rate": 0.15
+    },
+    "user_engagement_metrics": {
+      "likes": 76,
+      "shares": 34,
+      "comments": 19
+    },
+    "content_performance": {
+      "conversion_rate": 0.06,
+      "support_tickets_resolved": 45
+    },
+    "ai_model_performance": {
+      "retrieval_accuracy": 0.87,
+      "response_relevance": 0.85
+    },
+    "rag_performance": {
+      "precision": 0.83,
+      "recall": 0.80,
+      "f1_score": 0.81
+    },
+    "retrieval_score": 0.87,
+    "ranking_score": 0.85,
+    "relevance_feedback": [
+      {
+        "user_id": "USER003",
+        "rating": 4,
+        "feedback": "按照步骤解决了连接问题",
+        "timestamp": 1729392200000
+      }
+    ],
+    "improvement_suggestions": ["添加更多故障案例", "提供图文教程"],
+    "update_frequency": "monthly",
+    "next_review_date": "2025-02-20",
+    "auto_update_enabled": true,
+    "sync_status": "synced",
+    "last_sync_at": 1729392200000,
+    "external_systems": [],
+    "integration_status": {
+      "cms": "connected",
+      "analytics": "connected"
+    },
+    "workflow_status": "completed",
+    "approval_workflow": [
+      {
+        "step": "draft",
+        "status": "completed",
+        "assignee": "技术支持团队",
+        "completed_at": 1729392100000
+      },
+      {
+        "step": "review",
+        "status": "completed",
+        "assignee": "软件工程师",
+        "completed_at": 1729392200000
+      }
+    ],
+    "change_history": [
+      {
+        "version": "v1.5.0",
+        "date": "2025-01-20",
+        "changes": ["添加新的故障案例", "更新解决步骤"],
+        "author": "技术支持团队"
+      }
+    ],
+    "version_history": [
+      {
+        "version": "v1.5.0",
+        "release_date": "2025-01-20",
+        "description": "完善连接问题解决方案"
+      }
+    ],
+    "archived": false,
+    "archive_date": null,
+    "archive_reason": "",
+    "deprecation_status": "active",
+    "replacement_knowledge": [],
+    "migration_info": {},
+    "custom_attributes": {
+      "support_category": "软件",
+      "complexity_level": "medium"
+    },
+    "metadata": {
+      "document_type": "troubleshooting_guide",
+      "content_length": 1200,
+      "reading_time": 6
+    },
+    "notes": "连接问题是用户反馈最多的问题，需要持续更新和完善解决方案",
+    "internal_comments": [
+      {
+        "author": "软件工程师",
+        "comment": "解决方案经过实际测试验证，有效率高",
+        "timestamp": 1729392200000
+      }
+    ],
+    "external_comments": [],
+    "createdAt": 1729392200000,
+    "updatedAt": 1729392200000
+  },
+  {
+    "_id": "4",
+    "knowledge_id": "KB_AI_TAIJI_004",
+    "title": "AI太极戒指健康监测功能详解",
+    "content": "AI太极SOS RING集成了多种先进传感器，提供全面的健康监测功能。本文档详细介绍各项健康指标的含义、监测原理和使用方法。\n\n核心健康监测功能：\n\n1. 睡眠监测\n• 监测指标：深度睡眠、浅度睡眠、REM睡眠、清醒时间\n• 技术原理：加速度传感器+心率变异性分析\n• 数据精度：95%以上\n• 报告内容：睡眠质量评分、改善建议\n\n2. 心率监测\n• 监测范围：40-200 BPM\n• 采样频率：每秒1次\n• 异常预警：心率过高/过低提醒\n• 健康趋势：长期心率变化分析\n\n3. 血氧饱和度\n• 测量范围：70%-100%\n• 测量精度：±2%\n• 监测频率：可设置（默认每30分钟）\n• 临床参考：符合医疗设备标准\n\n4. 压力监测\n• 监测指标：EDA电皮层活动、心率变异性\n• 压力等级：低、中、高、极高\n• 缓解建议：呼吸训练、放松指导\n• 长期跟踪：压力趋势分析\n\n5. 活动追踪\n• 步数统计：精度±3%\n• 卡路里消耗：基于个人体征计算\n• 活动强度：久坐提醒、运动强度分析\n• 目标设定：个性化健康目标",
+    "category": "功能介绍",
+    "subcategory": "健康监测",
+    "keywords": ["健康监测", "睡眠", "心率", "血氧", "压力"],
+    "tags": ["健康功能", "传感器", "数据分析", "健康报告"],
+    "related_products": ["AI太极SOS RING专业版", "AI太极健康APP"],
+    "content_type": "功能详解",
+    "difficulty_level": "中级",
+    "priority": 2,
+    "language": "zh",
+    "region": "cn",
+    "author": "健康产品团队",
+    "reviewer": "医学顾问",
+    "status": "published",
+    "version": "v2.0.0",
+    "created_at": 1729392300000,
+    "updated_at": 1729392300000,
+    "last_reviewed_at": 1729392300000,
+    "published_at": 1729392300000,
+    "expiry_date": null,
+    "usage_count": 1120,
+    "usage_frequency": 7.8,
+    "effectiveness_score": 4.7,
+    "user_rating": 4.6,
+    "feedback_count": 134,
+    "positive_feedback": 118,
+    "negative_feedback": 16,
+    "view_count": 3450,
+    "search_count": 780,
+    "last_used_at": 1729392300000,
+    "embedding_vector": [0.4, 0.5, 0.6, 0.7, 0.8],
+    "embedding_model": "text-embedding-ada-002",
+    "embedding_version": "v1",
+    "chunk_count": 6,
+    "content_chunks": [
+      {
+        "chunk_id": "chunk_004",
+        "content": "AI太极SOS RING集成了多种先进传感器",
+        "start_index": 0,
+        "end_index": 42
+      }
+    ],
+    "summary": "AI太极戒指各项健康监测功能的详细说明和使用指南",
+    "question_examples": [
+      "AI太极戒指能监测哪些健康指标？",
+      "睡眠监测准确吗？",
+      "如何查看心率数据？"
+    ],
+    "answer_template": "AI太极戒指支持{健康功能}，监测原理是{监测原理}，数据精度达到{精度}。",
+    "related_knowledge": ["KB_AI_TAIJI_001", "KB_AI_TAIJI_005"],
+    "external_links": [
+      {
+        "title": "健康监测白皮书",
+        "url": "/docs/health-monitoring-whitepaper.pdf",
+        "type": "document"
+      }
+    ],
+    "attachments": [],
+    "images": [
+      {
+        "url": "/images/health/sleep-analysis.jpg",
+        "alt": "睡眠分析报告",
+        "caption": "AI太极APP睡眠分析报告界面"
+      }
+    ],
+    "videos": [
+      {
+        "url": "/videos/health-monitoring-demo.mp4",
+        "title": "健康监测功能演示",
+        "duration": "4:20"
+      }
+    ],
+    "references": [
+      {
+        "title": "睡眠监测技术研究",
+        "type": "research_paper",
+        "author": "AI太极研究院"
+      }
+    ],
+    "source": "产品文档",
+    "source_url": "",
+    "license": "proprietary",
+    "access_level": "public",
+    "target_audience": ["现有用户", "潜在客户", "健康关注者"],
+    "use_cases": ["产品咨询", "健康指导", "功能使用"],
+    "business_context": "健康产品推广和用户教育",
+    "department": "健康产品部",
+    "product_line": "智能穿戴",
+    "technical_specifications": {
+      "sleep_accuracy": ">95%",
+      "heart_rate_range": "40-200 BPM",
+      "spo2_accuracy": "±2%",
+      "battery_life_health_mode": "5-7天"
+    },
+    "troubleshooting_steps": [
+      {
+        "step": 1,
+        "title": "检查佩戴位置",
+        "description": "确保戒指正确佩戴，传感器接触良好"
+      },
+      {
+        "step": 2,
+        "title": "校准设备",
+        "description": "在APP中进行设备校准以提高准确性"
+      }
+    ],
+    "faq_items": [
+      {
+        "question": "健康数据准确吗？",
+        "answer": "经过临床验证，睡眠监测准确率95%以上，心率监测符合医疗设备标准"
+      }
+    ],
+    "tutorial_steps": [
+      {
+        "step": 1,
+        "title": "开启健康监测",
+        "description": "在APP中开启各项健康监测功能"
+      },
+      {
+        "step": 2,
+        "title": "设置个人目标",
+        "description": "根据个人情况设置健康目标"
+      }
+    ],
+    "best_practices": ["正确佩戴", "定期充电", "保持APP更新"],
+    "common_mistakes": ["佩戴过松", "长时间不校准"],
+    "tips_and_tricks": ["夜间佩戴更准确", "运动后及时查看数据"],
+    "limitations": ["不是医疗设备", "不能替代专业医疗建议"],
+    "prerequisites": ["AI太极APP", "个人健康信息设置"],
+    "requirements": ["正确佩戴", "定期同步数据"],
+    "compatibility": {
+      "health_apps": ["Apple Health", "Google Fit", "小米运动"],
+      "devices": "AI太极SOS RING全系列"
+    },
+    "integration_info": {
+      "health_platforms": ["Apple HealthKit", "Google Fit"],
+      "data_export": "CSV、PDF格式"
+    },
+    "api_references": [],
+    "code_examples": [],
+    "configuration_guide": "在APP设置中配置健康监测参数和提醒",
+    "installation_guide": "",
+    "maintenance_guide": "定期清洁传感器，保持佩戴舒适",
+    "security_considerations": ["健康数据加密", "隐私保护", "数据本地存储"],
+    "performance_notes": ["实时监测", "低功耗设计", "数据准确性高"],
+    "scalability_info": {
+      "data_storage": "云端+本地",
+      "user_capacity": "无限制"
+    },
+    "monitoring_guide": "通过APP查看实时健康数据和趋势分析",
+    "backup_procedures": [],
+    "recovery_procedures": [],
+    "quality_metrics": {
+      "monitoring_accuracy": "95%",
+      "user_satisfaction": "4.6/5",
+      "clinical_validation": "通过"
+    },
+    "validation_rules": [],
+    "test_cases": [],
+    "quality_score": 4.7,
+    "completeness_score": 4.6,
+    "accuracy_score": 4.8,
+    "relevance_score": 4.7,
+    "freshness_score": 4.5,
+    "readability_score": 4.6,
+    "technical_accuracy": true,
+    "fact_checked": true,
+    "peer_reviewed": true,
+    "approved_for_production": true,
+    "compliance_status": "compliant",
+    "gdpr_compliant": true,
+    "accessibility_compliant": true,
+    "search_optimization": {
+      "keywords_density": 0.08,
+      "meta_description": "AI太极戒指健康监测功能详细说明"
+    },
+    "seo_metadata": {
+      "title": "AI太极戒指健康监测功能详解",
+      "description": "了解AI太极戒指的睡眠、心率、血氧等健康监测功能",
+      "keywords": "AI太极,健康监测,睡眠,心率,血氧"
+    },
+    "analytics_data": {
+      "daily_views": 52,
+      "avg_session_duration": 280,
+      "bounce_rate": 0.18
+    },
+    "user_engagement_metrics": {
+      "likes": 189,
+      "shares": 98,
+      "comments": 34
+    },
+    "content_performance": {
+      "conversion_rate": 0.15,
+      "feature_adoption": 0.78
+    },
+    "ai_model_performance": {
+      "retrieval_accuracy": 0.91,
+      "response_relevance": 0.88
+    },
+    "rag_performance": {
+      "precision": 0.87,
+      "recall": 0.84,
+      "f1_score": 0.85
+    },
+    "retrieval_score": 0.91,
+    "ranking_score": 0.88,
+    "relevance_feedback": [
+      {
+        "user_id": "USER004",
+        "rating": 5,
+        "feedback": "健康功能介绍很详细",
+        "timestamp": 1729392300000
+      }
+    ],
+    "improvement_suggestions": ["添加更多健康指标", "提供个性化建议"],
+    "update_frequency": "quarterly",
+    "next_review_date": "2025-04-20",
+    "auto_update_enabled": true,
+    "sync_status": "synced",
+    "last_sync_at": 1729392300000,
+    "external_systems": [
+      {
+        "system": "健康平台",
+        "status": "connected",
+        "last_sync": 1729392300000
+      }
+    ],
+    "integration_status": {
+      "cms": "connected",
+      "analytics": "connected",
+      "health_platforms": "connected"
+    },
+    "workflow_status": "completed",
+    "approval_workflow": [
+      {
+        "step": "draft",
+        "status": "completed",
+        "assignee": "健康产品团队",
+        "completed_at": 1729392200000
+      },
+      {
+        "step": "review",
+        "status": "completed",
+        "assignee": "医学顾问",
+        "completed_at": 1729392300000
+      }
+    ],
+    "change_history": [
+      {
+        "version": "v2.0.0",
+        "date": "2025-01-20",
+        "changes": ["添加压力监测功能", "更新技术规格"],
+        "author": "健康产品团队"
+      }
+    ],
+    "version_history": [
+      {
+        "version": "v2.0.0",
+        "release_date": "2025-01-20",
+        "description": "重大功能更新，添加压力监测"
+      }
+    ],
+    "archived": false,
+    "archive_date": null,
+    "archive_reason": "",
+    "deprecation_status": "active",
+    "replacement_knowledge": [],
+    "migration_info": {},
+    "custom_attributes": {
+      "health_category": "comprehensive",
+      "medical_validation": true
+    },
+    "metadata": {
+      "document_type": "feature_guide",
+      "content_length": 1800,
+      "reading_time": 8
+    },
+    "notes": "健康监测是核心功能，需要确保医学准确性和用户理解",
+    "internal_comments": [
+      {
+        "author": "医学顾问",
+        "comment": "健康指标说明符合医学标准，可以安全使用",
+        "timestamp": 1729392300000
+      }
+    ],
+    "external_comments": [],
+    "createdAt": 1729392300000,
+    "updatedAt": 1729392300000
+  },
+  {
+    "_id": "5",
+    "knowledge_id": "KB_AI_TAIJI_005",
+    "title": "AI太极戒指SOS紧急功能使用指南",
+    "content": "AI太极SOS RING的SOS紧急功能是产品的核心安全特性，可在紧急情况下快速求助。本文档详细介绍SOS功能的使用方法、设置步骤和注意事项。\n\nSOS功能概述：\n• 触发方式：长按侧面按钮3秒\n• 响应时间：<5秒\n• 求助范围：预设联系人、紧急服务\n• 位置精度：GPS+基站定位，精度5-10米\n\n设置步骤：\n1. 在AI太极APP中进入SOS设置\n2. 添加紧急联系人（最多3人）\n3. 设置求助信息模板\n4. 启用位置共享权限\n5. 测试SOS功能\n\n紧急联系人设置：\n• 联系人1：主要紧急联系人\n• 联系人2：备用紧急联系人\n• 联系人3：医疗紧急联系人\n\n求助信息内容：\n• 用户基本信息\n• 紧急情况描述\n• 实时位置信息\n• 健康状态数据\n• 电池电量状态\n\n使用场景：\n• 医疗急救：心脏病发作、意外受伤\n• 安全威胁：遇到危险、人身安全\n• 走失求助：老人、儿童走失\n• 运动意外：户外运动受伤\n\n注意事项：\n• 定期测试SOS功能\n• 确保联系人信息准确\n• 保持设备电量充足\n• 避免误触发的操作",
+    "category": "安全功能",
+    "subcategory": "SOS功能",
+    "keywords": ["SOS", "紧急求助", "安全", "紧急联系人"],
+    "tags": ["安全功能", "紧急求助", "SOS", "用户安全"],
+    "related_products": ["AI太极SOS RING全系列", "AI太极安全服务"],
+    "content_type": "使用指南",
+    "difficulty_level": "初级",
+    "priority": 1,
+    "language": "zh",
+    "region": "cn",
+    "author": "安全产品团队",
+    "reviewer": "安全专家",
+    "status": "published",
+    "version": "v1.8.0",
+    "created_at": 1729392400000,
+    "updated_at": 1729392400000,
+    "last_reviewed_at": 1729392400000,
+    "published_at": 1729392400000,
+    "expiry_date": null,
+    "usage_count": 1450,
+    "usage_frequency": 9.2,
+    "effectiveness_score": 4.9,
+    "user_rating": 4.8,
+    "feedback_count": 156,
+    "positive_feedback": 148,
+    "negative_feedback": 8,
+    "view_count": 4560,
+    "search_count": 890,
+    "last_used_at": 1729392400000,
+    "embedding_vector": [0.5, 0.6, 0.7, 0.8, 0.9],
+    "embedding_model": "text-embedding-ada-002",
+    "embedding_version": "v1",
+    "chunk_count": 4,
+    "content_chunks": [
+      {
+        "chunk_id": "chunk_005",
+        "content": "AI太极SOS RING的SOS紧急功能是产品的核心安全特性",
+        "start_index": 0,
+        "end_index": 52
+      }
+    ],
+    "summary": "AI太极戒指SOS紧急功能的设置和使用详细指南",
+    "question_examples": [
+      "如何使用AI太极戒指的SOS功能？",
+      "SOS紧急求助怎么设置？",
+      "长按按钮会发生什么？"
+    ],
+    "answer_template": "SOS功能通过{触发方式}激活，会向{联系人}发送{求助信息}。",
+    "related_knowledge": ["KB_AI_TAIJI_001", "KB_AI_TAIJI_002"],
+    "external_links": [],
+    "attachments": [
+      {
+        "name": "SOS功能设置指南",
+        "url": "/docs/sos-setup-guide.pdf",
+        "type": "pdf"
+      }
+    ],
+    "images": [
+      {
+        "url": "/images/sos/emergency-button.jpg",
+        "alt": "SOS紧急按钮",
+        "caption": "AI太极戒指SOS紧急按钮位置"
+      }
+    ],
+    "videos": [
+      {
+        "url": "/videos/sos-function-demo.mp4",
+        "title": "SOS功能演示",
+        "duration": "2:15"
+      }
+    ],
+    "references": [],
+    "source": "安全文档",
+    "source_url": "",
+    "license": "proprietary",
+    "access_level": "public",
+    "target_audience": ["所有用户", "家庭成员", "护理人员"],
+    "use_cases": ["紧急求助", "安全防护", "家庭关怀"],
+    "business_context": "用户安全保障和产品价值体现",
+    "department": "安全产品部",
+    "product_line": "智能穿戴",
+    "technical_specifications": {
+      "response_time": "<5秒",
+      "location_accuracy": "5-10米",
+      "contact_limit": "3人",
+      "battery_emergency_mode": "72小时"
+    },
+    "troubleshooting_steps": [
+      {
+        "step": 1,
+        "title": "检查网络连接",
+        "description": "确保设备有网络连接以发送求助信息"
+      },
+      {
+        "step": 2,
+        "title": "验证联系人设置",
+        "description": "确认紧急联系人信息正确无误"
+      }
+    ],
+    "faq_items": [
+      {
+        "question": "误触发SOS怎么办？",
+        "answer": "在10秒内再次按下按钮可以取消SOS求助"
+      }
+    ],
+    "tutorial_steps": [
+      {
+        "step": 1,
+        "title": "打开APP设置",
+        "description": "进入AI太极APP的SOS设置页面"
+      },
+      {
+        "step": 2,
+        "title": "添加联系人",
+        "description": "添加紧急联系人信息和关系"
+      }
+    ],
+    "best_practices": ["定期测试", "更新联系人", "保持电量", "告知家人"],
+    "common_mistakes": ["联系人信息过期", "网络连接问题", "电量不足"],
+    "tips_and_tricks": ["设置医疗信息", "添加备用联系人", "测试取消功能"],
+    "limitations": ["需要网络连接",
