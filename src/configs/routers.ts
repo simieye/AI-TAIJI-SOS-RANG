@@ -16,6 +16,7 @@ import NOTIFICATIONS from '../pages/notifications.jsx';
 import ADMIN from '../pages/admin.jsx';
 import ANALYTICS from '../pages/analytics.jsx';
 import ORDER_CONFIRMATION from '../pages/order-confirmation.jsx';
+import PUBLISH_ADMIN from '../pages/publish-admin.jsx';
 export const routers = [{
   id: "home",
   component: HOME
@@ -70,4 +71,7 @@ export const routers = [{
 }, {
   id: "order-confirmation",
   component: ORDER_CONFIRMATION
+}, {
+  id: "publish-admin",
+  component: PUBLISH_ADMIN
 }]

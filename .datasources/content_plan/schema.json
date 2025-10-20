@@ -1,0 +1,234 @@
+
+{
+  "name": "content_plan",
+  "title": "内容计划",
+  "schemas": [
+    {
+      "name": "week_number",
+      "title": "周次",
+      "type": "Number"
+    },
+    {
+      "name": "year",
+      "title": "年份",
+      "type": "Number"
+    },
+    {
+      "name": "platform",
+      "title": "发布平台",
+      "type": "String"
+    },
+    {
+      "name": "content_type",
+      "title": "内容类型",
+      "type": "String"
+    },
+    {
+      "name": "publish_date",
+      "title": "发布日期",
+      "type": "Date",
+      "format": "date"
+    },
+    {
+      "name": "publish_time",
+      "title": "发布时间",
+      "type": "DateTime",
+      "format": "timestamp-ms"
+    },
+    {
+      "name": "title",
+      "title": "标题",
+      "type": "String"
+    },
+    {
+      "name": "content",
+      "title": "内容正文",
+      "type": "MultiLineString"
+    },
+    {
+      "name": "script",
+      "title": "发布脚本",
+      "type": "MultiLineString"
+    },
+    {
+      "name": "resource_paths",
+      "title": "资源路径",
+      "type": "Array",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "status",
+      "title": "状态",
+      "type": "String"
+    },
+    {
+      "name": "priority",
+      "title": "优先级",
+      "type": "Number"
+    },
+    {
+      "name": "tags",
+      "title": "标签",
+      "type": "Array",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "target_audience",
+      "title": "目标受众",
+      "type": "String"
+    },
+    {
+      "name": "content_purpose",
+      "title": "内容目的",
+      "type": "String"
+    },
+    {
+      "name": "estimated_engagement",
+      "title": "预期互动量",
+      "type": "Number"
+    },
+    {
+      "name": "actual_engagement",
+      "title": "实际互动量",
+      "type": "Object",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "publish_result",
+      "title": "发布结果",
+      "type": "Object",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "error_message",
+      "title": "错误信息",
+      "type": "MultiLineString"
+    },
+    {
+      "name": "retry_count",
+      "title": "重试次数",
+      "type": "Number"
+    },
+    {
+      "name": "auto_publish_enabled",
+      "title": "自动发布启用",
+      "type": "Boolean"
+    },
+    {
+      "name": "scheduled_publish",
+      "title": "计划发布",
+      "type": "Boolean"
+    },
+    {
+      "name": "approval_status",
+      "title": "审核状态",
+      "type": "String"
+    },
+    {
+      "name": "approved_by",
+      "title": "审核人",
+      "type": "String"
+    },
+    {
+      "name": "approved_at",
+      "title": "审核时间",
+      "type": "DateTime",
+      "format": "timestamp-ms"
+    },
+    {
+      "name": "created_by",
+      "title": "创建人",
+      "type": "String"
+    },
+    {
+      "name": "assigned_to",
+      "title": "负责人",
+      "type": "String"
+    },
+    {
+      "name": "content_template_id",
+      "title": "内容模板ID",
+      "type": "String"
+    },
+    {
+      "name": "campaign_id",
+      "title": "活动ID",
+      "type": "String"
+    },
+    {
+      "name": "seo_keywords",
+      "title": "SEO关键词",
+      "type": "Array",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "call_to_action",
+      "title": "行动号召",
+      "type": "String"
+    },
+    {
+      "name": "content_length",
+      "title": "内容长度",
+      "type": "Number"
+    },
+    {
+      "name": "reading_time",
+      "title": "阅读时间(分钟)",
+      "type": "Number"
+    },
+    {
+      "name": "language",
+      "title": "语言",
+      "type": "String"
+    },
+    {
+      "name": "region",
+      "title": "地区",
+      "type": "String"
+    },
+    {
+      "name": "visibility",
+      "title": "可见性",
+      "type": "String"
+    },
+    {
+      "name": "comments_enabled",
+      "title": "评论启用",
+      "type": "Boolean"
+    },
+    {
+      "name": "sharing_enabled",
+      "title": "分享启用",
+      "type": "Boolean"
+    },
+    {
+      "name": "analytics_tracked",
+      "title": "分析跟踪",
+      "type": "Boolean"
+    },
+    {
+      "name": "performance_metrics",
+      "title": "性能指标",
+      "type": "Object",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "notes",
+      "title": "备注信息",
+      "type": "MultiLineString"
+    }
+  ]
+}
+  

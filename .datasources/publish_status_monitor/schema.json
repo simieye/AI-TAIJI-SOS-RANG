@@ -1,0 +1,399 @@
+
+{
+  "name": "publish_status_monitor",
+  "title": "发布状态监控",
+  "schemas": [
+    {
+      "name": "publish_id",
+      "title": "发布ID",
+      "type": "String"
+    },
+    {
+      "name": "content_plan_id",
+      "title": "内容计划ID",
+      "type": "String"
+    },
+    {
+      "name": "platform",
+      "title": "发布平台",
+      "type": "String"
+    },
+    {
+      "name": "platform_name",
+      "title": "平台名称",
+      "type": "String"
+    },
+    {
+      "name": "publish_type",
+      "title": "发布类型",
+      "type": "String"
+    },
+    {
+      "name": "publish_status",
+      "title": "发布状态",
+      "type": "String"
+    },
+    {
+      "name": "scheduled_time",
+      "title": "计划发布时间",
+      "type": "DateTime",
+      "format": "timestamp-ms"
+    },
+    {
+      "name": "actual_publish_time",
+      "title": "实际发布时间",
+      "type": "DateTime",
+      "format": "timestamp-ms"
+    },
+    {
+      "name": "completion_time",
+      "title": "完成时间",
+      "type": "DateTime",
+      "format": "timestamp-ms"
+    },
+    {
+      "name": "duration",
+      "title": "发布耗时(毫秒)",
+      "type": "Number"
+    },
+    {
+      "name": "platform_post_id",
+      "title": "平台发布ID",
+      "type": "String"
+    },
+    {
+      "name": "platform_url",
+      "title": "平台链接",
+      "type": "Url"
+    },
+    {
+      "name": "success",
+      "title": "是否成功",
+      "type": "Boolean"
+    },
+    {
+      "name": "error_code",
+      "title": "错误代码",
+      "type": "String"
+    },
+    {
+      "name": "error_message",
+      "title": "错误信息",
+      "type": "MultiLineString"
+    },
+    {
+      "name": "error_details",
+      "title": "错误详情",
+      "type": "Object",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "retry_count",
+      "title": "重试次数",
+      "type": "Number"
+    },
+    {
+      "name": "max_retries",
+      "title": "最大重试次数",
+      "type": "Number"
+    },
+    {
+      "name": "retry_interval",
+      "title": "重试间隔(秒)",
+      "type": "Number"
+    },
+    {
+      "name": "next_retry_time",
+      "title": "下次重试时间",
+      "type": "DateTime",
+      "format": "timestamp-ms"
+    },
+    {
+      "name": "api_endpoint",
+      "title": "API端点",
+      "type": "String"
+    },
+    {
+      "name": "api_method",
+      "title": "API方法",
+      "type": "String"
+    },
+    {
+      "name": "request_headers",
+      "title": "请求头",
+      "type": "Object",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "request_payload",
+      "title": "请求载荷",
+      "type": "Object",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "response_status",
+      "title": "响应状态码",
+      "type": "Number"
+    },
+    {
+      "name": "response_headers",
+      "title": "响应头",
+      "type": "Object",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "response_body",
+      "title": "响应体",
+      "type": "MultiLineString"
+    },
+    {
+      "name": "platform_response",
+      "title": "平台响应",
+      "type": "Object",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "queue_status",
+      "title": "队列状态",
+      "type": "String"
+    },
+    {
+      "name": "queue_position",
+      "title": "队列位置",
+      "type": "Number"
+    },
+    {
+      "name": "processing_priority",
+      "title": "处理优先级",
+      "type": "Number"
+    },
+    {
+      "name": "worker_id",
+      "title": "处理工作器ID",
+      "type": "String"
+    },
+    {
+      "name": "server_instance",
+      "title": "服务器实例",
+      "type": "String"
+    },
+    {
+      "name": "region",
+      "title": "发布区域",
+      "type": "String"
+    },
+    {
+      "name": "content_hash",
+      "title": "内容哈希",
+      "type": "String"
+    },
+    {
+      "name": "checksum",
+      "title": "校验和",
+      "type": "String"
+    },
+    {
+      "name": "file_size",
+      "title": "文件大小(字节)",
+      "type": "Number"
+    },
+    {
+      "name": "media_count",
+      "title": "媒体文件数量",
+      "type": "Number"
+    },
+    {
+      "name": "text_length",
+      "title": "文本长度",
+      "type": "Number"
+    },
+    {
+      "name": "hashtags_count",
+      "title": "标签数量",
+      "type": "Number"
+    },
+    {
+      "name": "mentions_count",
+      "title": "提及数量",
+      "type": "Number"
+    },
+    {
+      "name": "visibility_level",
+      "title": "可见性级别",
+      "type": "String"
+    },
+    {
+      "name": "audience_reach",
+      "title": "受众覆盖",
+      "type": "Number"
+    },
+    {
+      "name": "estimated_impressions",
+      "title": "预估展示量",
+      "type": "Number"
+    },
+    {
+      "name": "publish_cost",
+      "title": "发布成本",
+      "type": "Number"
+    },
+    {
+      "name": "currency",
+      "title": "货币类型",
+      "type": "String"
+    },
+    {
+      "name": "billing_code",
+      "title": "计费代码",
+      "type": "String"
+    },
+    {
+      "name": "campaign_id",
+      "title": "活动ID",
+      "type": "String"
+    },
+    {
+      "name": "trigger_type",
+      "title": "触发类型",
+      "type": "String"
+    },
+    {
+      "name": "trigger_source",
+      "title": "触发源",
+      "type": "String"
+    },
+    {
+      "name": "automation_rule_id",
+      "title": "自动化规则ID",
+      "type": "String"
+    },
+    {
+      "name": "webhook_url",
+      "title": "回调地址",
+      "type": "Url"
+    },
+    {
+      "name": "webhook_status",
+      "title": "回调状态",
+      "type": "String"
+    },
+    {
+      "name": "webhook_response",
+      "title": "回调响应",
+      "type": "Object",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "notification_sent",
+      "title": "通知已发送",
+      "type": "Boolean"
+    },
+    {
+      "name": "notification_channels",
+      "title": "通知渠道",
+      "type": "Array",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "monitoring_enabled",
+      "title": "监控启用",
+      "type": "Boolean"
+    },
+    {
+      "name": "alert_rules",
+      "title": "告警规则",
+      "type": "Array",
+      "items": {
+        "type": "Object"
+      }
+    },
+    {
+      "name": "performance_metrics",
+      "title": "性能指标",
+      "type": "Object",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "health_check_status",
+      "title": "健康检查状态",
+      "type": "String"
+    },
+    {
+      "name": "last_health_check",
+      "title": "最后健康检查",
+      "type": "DateTime",
+      "format": "timestamp-ms"
+    },
+    {
+      "name": "dependencies",
+      "title": "依赖项",
+      "type": "Array",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "rollback_available",
+      "title": "回滚可用",
+      "type": "Boolean"
+    },
+    {
+      "name": "rollback_info",
+      "title": "回滚信息",
+      "type": "Object",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "version",
+      "title": "版本号",
+      "type": "String"
+    },
+    {
+      "name": "environment",
+      "title": "环境",
+      "type": "String"
+    },
+    {
+      "name": "debug_mode",
+      "title": "调试模式",
+      "type": "Boolean"
+    },
+    {
+      "name": "log_level",
+      "title": "日志级别",
+      "type": "String"
+    },
+    {
+      "name": "tags",
+      "title": "标签",
+      "type": "Array",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "notes",
+      "title": "备注信息",
+      "type": "MultiLineString"
+    }
+  ]
+}
+  
