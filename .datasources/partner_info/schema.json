@@ -1,0 +1,100 @@
+
+{
+  "name": "partner_info",
+  "title": "合作伙伴信息",
+  "schemas": [
+    {
+      "name": "company_name",
+      "title": "公司名称",
+      "type": "String"
+    },
+    {
+      "name": "company_logo",
+      "title": "公司Logo",
+      "type": "Image"
+    },
+    {
+      "name": "partner_type",
+      "title": "合作类型",
+      "type": "String"
+    },
+    {
+      "name": "contact_person",
+      "title": "联系人",
+      "type": "String"
+    },
+    {
+      "name": "contact_title",
+      "title": "联系人职位",
+      "type": "String"
+    },
+    {
+      "name": "phone",
+      "title": "联系电话",
+      "type": "String"
+    },
+    {
+      "name": "email",
+      "title": "邮箱地址",
+      "type": "Email"
+    },
+    {
+      "name": "company_website",
+      "title": "公司网站",
+      "type": "Url"
+    },
+    {
+      "name": "cooperation_status",
+      "title": "合作状态",
+      "type": "String"
+    },
+    {
+      "name": "cooperation_content",
+      "title": "合作内容",
+      "type": "MultiLineString"
+    },
+    {
+      "name": "cooperation_start_date",
+      "title": "合作开始日期",
+      "type": "Date",
+      "format": "date"
+    },
+    {
+      "name": "cooperation_end_date",
+      "title": "合作结束日期",
+      "type": "Date",
+      "format": "date"
+    },
+    {
+      "name": "company_description",
+      "title": "公司简介",
+      "type": "MultiLineString"
+    },
+    {
+      "name": "business_scope",
+      "title": "业务范围",
+      "type": "String"
+    },
+    {
+      "name": "address",
+      "title": "公司地址",
+      "type": "String"
+    },
+    {
+      "name": "priority_level",
+      "title": "优先级",
+      "type": "String"
+    },
+    {
+      "name": "notes",
+      "title": "备注信息",
+      "type": "MultiLineString"
+    },
+    {
+      "name": "source",
+      "title": "来源渠道",
+      "type": "String"
+    }
+  ]
+}
+  

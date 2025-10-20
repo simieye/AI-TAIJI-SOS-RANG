@@ -1,0 +1,59 @@
+
+{
+  "name": "user_appointment",
+  "title": "用户预约",
+  "schemas": [
+    {
+      "name": "user_name",
+      "title": "用户姓名",
+      "type": "String"
+    },
+    {
+      "name": "phone",
+      "title": "手机号码",
+      "type": "String"
+    },
+    {
+      "name": "email",
+      "title": "邮箱地址",
+      "type": "Email"
+    },
+    {
+      "name": "appointment_type",
+      "title": "预约类型",
+      "type": "String"
+    },
+    {
+      "name": "appointment_date",
+      "title": "预约日期",
+      "type": "Date",
+      "format": "date"
+    },
+    {
+      "name": "appointment_time",
+      "title": "预约时间",
+      "type": "String"
+    },
+    {
+      "name": "status",
+      "title": "预约状态",
+      "type": "String"
+    },
+    {
+      "name": "notes",
+      "title": "备注信息",
+      "type": "MultiLineString"
+    },
+    {
+      "name": "preferred_location",
+      "title": "期望地点",
+      "type": "String"
+    },
+    {
+      "name": "source",
+      "title": "预约来源",
+      "type": "String"
+    }
+  ]
+}
+  

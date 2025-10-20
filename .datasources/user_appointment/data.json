@@ -1,0 +1,79 @@
+
+[
+  {
+    "_id": "1",
+    "user_name": "张三",
+    "phone": "13800138001",
+    "email": "zhangsan@example.com",
+    "appointment_type": "产品体验",
+    "appointment_date": "2025-10-25",
+    "appointment_time": "14:00",
+    "status": "待确认",
+    "notes": "希望了解SOS RING的睡眠监测功能",
+    "preferred_location": "深圳南山科技园",
+    "source": "官网",
+    "createdAt": 1729392000000,
+    "updatedAt": 1729392000000
+  },
+  {
+    "_id": "2",
+    "user_name": "李四",
+    "phone": "13900139002",
+    "email": "lisi@example.com",
+    "appointment_type": "健康咨询",
+    "appointment_date": "2025-10-26",
+    "appointment_time": "10:00",
+    "status": "已确认",
+    "notes": "有睡眠障碍问题，希望获得专业建议",
+    "preferred_location": "线上咨询",
+    "source": "产品页面",
+    "createdAt": 1729392100000,
+    "updatedAt": 1729392100000
+  },
+  {
+    "_id": "3",
+    "user_name": "王五",
+    "phone": "13700137003",
+    "email": "wangwu@example.com",
+    "appointment_type": "产品体验",
+    "appointment_date": "2025-10-27",
+    "appointment_time": "15:30",
+    "status": "已完成",
+    "notes": "企业客户，希望批量采购体验",
+    "preferred_location": "深圳总部",
+    "source": "合作页面",
+    "createdAt": 1729392200000,
+    "updatedAt": 1729392200000
+  },
+  {
+    "_id": "4",
+    "user_name": "赵六",
+    "phone": "13600136004",
+    "email": "zhaoliu@example.com",
+    "appointment_type": "健康咨询",
+    "appointment_date": "2025-10-28",
+    "appointment_time": "09:00",
+    "status": "待确认",
+    "notes": "关注EDA压力检测功能，想了解具体应用场景",
+    "preferred_location": "北京体验中心",
+    "source": "技术页面",
+    "createdAt": 1729392300000,
+    "updatedAt": 1729392300000
+  },
+  {
+    "_id": "5",
+    "user_name": "陈七",
+    "phone": "13500135005",
+    "email": "chenqi@example.com",
+    "appointment_type": "产品体验",
+    "appointment_date": "2025-10-29",
+    "appointment_time": "16:00",
+    "status": "已取消",
+    "notes": "临时有事，需要重新预约",
+    "preferred_location": "上海体验中心",
+    "source": "生态页面",
+    "createdAt": 1729392400000,
+    "updatedAt": 1729392400000
+  }
+]
+  

@@ -1,0 +1,158 @@
+
+{
+  "name": "product_order",
+  "title": "产品订单",
+  "schemas": [
+    {
+      "name": "order_number",
+      "title": "订单编号",
+      "type": "String"
+    },
+    {
+      "name": "user_name",
+      "title": "用户姓名",
+      "type": "String"
+    },
+    {
+      "name": "phone",
+      "title": "手机号码",
+      "type": "String"
+    },
+    {
+      "name": "email",
+      "title": "邮箱地址",
+      "type": "Email"
+    },
+    {
+      "name": "product_type",
+      "title": "产品类型",
+      "type": "String"
+    },
+    {
+      "name": "product_name",
+      "title": "产品名称",
+      "type": "String"
+    },
+    {
+      "name": "quantity",
+      "title": "数量",
+      "type": "Number"
+    },
+    {
+      "name": "unit_price",
+      "title": "单价",
+      "type": "Number"
+    },
+    {
+      "name": "total_amount",
+      "title": "总金额",
+      "type": "Number"
+    },
+    {
+      "name": "currency",
+      "title": "货币类型",
+      "type": "String"
+    },
+    {
+      "name": "payment_status",
+      "title": "支付状态",
+      "type": "String"
+    },
+    {
+      "name": "payment_method",
+      "title": "支付方式",
+      "type": "String"
+    },
+    {
+      "name": "payment_time",
+      "title": "支付时间",
+      "type": "DateTime",
+      "format": "timestamp-ms"
+    },
+    {
+      "name": "transaction_id",
+      "title": "交易号",
+      "type": "String"
+    },
+    {
+      "name": "payment_gateway",
+      "title": "支付网关",
+      "type": "String"
+    },
+    {
+      "name": "payment_amount",
+      "title": "支付金额",
+      "type": "Number"
+    },
+    {
+      "name": "refund_amount",
+      "title": "退款金额",
+      "type": "Number"
+    },
+    {
+      "name": "refund_status",
+      "title": "退款状态",
+      "type": "String"
+    },
+    {
+      "name": "refund_time",
+      "title": "退款时间",
+      "type": "DateTime",
+      "format": "timestamp-ms"
+    },
+    {
+      "name": "refund_reason",
+      "title": "退款原因",
+      "type": "MultiLineString"
+    },
+    {
+      "name": "payment_notes",
+      "title": "支付备注",
+      "type": "MultiLineString"
+    },
+    {
+      "name": "order_status",
+      "title": "订单状态",
+      "type": "String"
+    },
+    {
+      "name": "shipping_address",
+      "title": "收货地址",
+      "type": "Object",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "billing_address",
+      "title": "账单地址",
+      "type": "Object",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "order_date",
+      "title": "下单日期",
+      "type": "Date",
+      "format": "date"
+    },
+    {
+      "name": "delivery_date",
+      "title": "预计送达日期",
+      "type": "Date",
+      "format": "date"
+    },
+    {
+      "name": "notes",
+      "title": "备注信息",
+      "type": "MultiLineString"
+    },
+    {
+      "name": "source",
+      "title": "订单来源",
+      "type": "String"
+    }
+  ]
+}
+  

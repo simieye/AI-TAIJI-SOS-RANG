@@ -1,0 +1,217 @@
+
+{
+  "name": "product_configuration_order",
+  "title": "产品配置订单",
+  "schemas": [
+    {
+      "name": "order_id",
+      "title": "订单ID",
+      "type": "String"
+    },
+    {
+      "name": "user_id",
+      "title": "用户ID",
+      "type": "String"
+    },
+    {
+      "name": "user_name",
+      "title": "用户姓名",
+      "type": "String"
+    },
+    {
+      "name": "user_phone",
+      "title": "用户手机",
+      "type": "String"
+    },
+    {
+      "name": "user_email",
+      "title": "用户邮箱",
+      "type": "Email"
+    },
+    {
+      "name": "product_name",
+      "title": "产品名称",
+      "type": "String"
+    },
+    {
+      "name": "configuration",
+      "title": "产品配置",
+      "type": "Object",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "size_info",
+      "title": "尺寸信息",
+      "type": "Object",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "material_info",
+      "title": "材质信息",
+      "type": "Object",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "color_info",
+      "title": "颜色信息",
+      "type": "Object",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "modules_info",
+      "title": "功能模块信息",
+      "type": "Array",
+      "items": {
+        "type": "Object"
+      }
+    },
+    {
+      "name": "base_price",
+      "title": "基础价格",
+      "type": "Number"
+    },
+    {
+      "name": "size_price",
+      "title": "尺寸加价",
+      "type": "Number"
+    },
+    {
+      "name": "material_price",
+      "title": "材质加价",
+      "type": "Number"
+    },
+    {
+      "name": "color_price",
+      "title": "颜色加价",
+      "type": "Number"
+    },
+    {
+      "name": "modules_price",
+      "title": "模块加价",
+      "type": "Number"
+    },
+    {
+      "name": "total_price",
+      "title": "总价格",
+      "type": "Number"
+    },
+    {
+      "name": "currency",
+      "title": "货币类型",
+      "type": "String"
+    },
+    {
+      "name": "order_status",
+      "title": "订单状态",
+      "type": "String"
+    },
+    {
+      "name": "payment_status",
+      "title": "支付状态",
+      "type": "String"
+    },
+    {
+      "name": "payment_method",
+      "title": "支付方式",
+      "type": "String"
+    },
+    {
+      "name": "payment_time",
+      "title": "支付时间",
+      "type": "DateTime",
+      "format": "timestamp-ms"
+    },
+    {
+      "name": "transaction_id",
+      "title": "交易号",
+      "type": "String"
+    },
+    {
+      "name": "payment_gateway",
+      "title": "支付网关",
+      "type": "String"
+    },
+    {
+      "name": "payment_amount",
+      "title": "支付金额",
+      "type": "Number"
+    },
+    {
+      "name": "refund_amount",
+      "title": "退款金额",
+      "type": "Number"
+    },
+    {
+      "name": "refund_status",
+      "title": "退款状态",
+      "type": "String"
+    },
+    {
+      "name": "refund_time",
+      "title": "退款时间",
+      "type": "DateTime",
+      "format": "timestamp-ms"
+    },
+    {
+      "name": "refund_reason",
+      "title": "退款原因",
+      "type": "MultiLineString"
+    },
+    {
+      "name": "payment_notes",
+      "title": "支付备注",
+      "type": "MultiLineString"
+    },
+    {
+      "name": "shipping_address",
+      "title": "收货地址",
+      "type": "Object",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "billing_address",
+      "title": "账单地址",
+      "type": "Object",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "estimated_delivery",
+      "title": "预计交付时间",
+      "type": "Date",
+      "format": "date"
+    },
+    {
+      "name": "production_days",
+      "title": "生产天数",
+      "type": "Number"
+    },
+    {
+      "name": "configuration_hash",
+      "title": "配置哈希",
+      "type": "String"
+    },
+    {
+      "name": "notes",
+      "title": "备注信息",
+      "type": "MultiLineString"
+    },
+    {
+      "name": "source",
+      "title": "订单来源",
+      "type": "String"
+    }
+  ]
+}
+  

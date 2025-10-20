@@ -1,0 +1,124 @@
+
+{
+  "name": "consultation_record",
+  "title": "咨询记录",
+  "schemas": [
+    {
+      "name": "consultation_id",
+      "title": "咨询ID",
+      "type": "String"
+    },
+    {
+      "name": "user_id",
+      "title": "用户ID",
+      "type": "String"
+    },
+    {
+      "name": "user_name",
+      "title": "用户姓名",
+      "type": "String"
+    },
+    {
+      "name": "user_phone",
+      "title": "用户手机",
+      "type": "String"
+    },
+    {
+      "name": "user_email",
+      "title": "用户邮箱",
+      "type": "Email"
+    },
+    {
+      "name": "consultation_type",
+      "title": "咨询类型",
+      "type": "String"
+    },
+    {
+      "name": "consultation_subject",
+      "title": "咨询主题",
+      "type": "String"
+    },
+    {
+      "name": "consultation_content",
+      "title": "咨询内容",
+      "type": "MultiLineString"
+    },
+    {
+      "name": "consultation_channel",
+      "title": "咨询渠道",
+      "type": "String"
+    },
+    {
+      "name": "status",
+      "title": "咨询状态",
+      "type": "String"
+    },
+    {
+      "name": "priority",
+      "title": "优先级",
+      "type": "String"
+    },
+    {
+      "name": "consultant_id",
+      "title": "咨询师ID",
+      "type": "String"
+    },
+    {
+      "name": "consultant_name",
+      "title": "咨询师姓名",
+      "type": "String"
+    },
+    {
+      "name": "consultation_time",
+      "title": "咨询时间",
+      "type": "DateTime",
+      "format": "timestamp-ms"
+    },
+    {
+      "name": "response_time",
+      "title": "首次响应时间",
+      "type": "DateTime",
+      "format": "timestamp-ms"
+    },
+    {
+      "name": "completion_time",
+      "title": "完成时间",
+      "type": "DateTime",
+      "format": "timestamp-ms"
+    },
+    {
+      "name": "message_count",
+      "title": "消息数量",
+      "type": "Number"
+    },
+    {
+      "name": "satisfaction_rating",
+      "title": "满意度评分",
+      "type": "Number"
+    },
+    {
+      "name": "feedback",
+      "title": "用户反馈",
+      "type": "MultiLineString"
+    },
+    {
+      "name": "tags",
+      "title": "标签",
+      "type": "Array",
+      "items": {
+        "type": "String"
+      }
+    },
+    {
+      "name": "internal_notes",
+      "title": "内部备注",
+      "type": "MultiLineString"
+    },
+    {
+      "name": "source",
+      "title": "来源渠道",
+      "type": "String"
+    }
+  ]
+}
+  

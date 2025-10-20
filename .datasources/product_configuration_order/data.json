@@ -1,0 +1,538 @@
+
+[
+  {
+    "_id": "1",
+    "order_id": "CONFIG20251020001",
+    "user_id": "USER001",
+    "user_name": "张三",
+    "user_phone": "13800138001",
+    "user_email": "zhangsan@example.com",
+    "product_name": "AI太极·SOS RING",
+    "configuration": {
+      "size": "medium",
+      "material": "titanium",
+      "color": "black",
+      "modules": {
+        "sleep": true,
+        "sos": true,
+        "health": false
+      }
+    },
+    "size_info": {
+      "id": "medium",
+      "label": "中号",
+      "diameter": "18-20mm",
+      "circumference": "57-64mm",
+      "price": 0
+    },
+    "material_info": {
+      "id": "titanium",
+      "label": "钛合金",
+      "description": "轻量化，防过敏，适合日常佩戴",
+      "price": 0,
+      "color": "#C0C0C0"
+    },
+    "color_info": {
+      "id": "black",
+      "label": "经典黑",
+      "description": "深邃神秘，科技感十足",
+      "price": 0,
+      "bg": "bg-black"
+    },
+    "modules_info": [
+      {
+        "id": "sleep",
+        "label": "睡眠优化",
+        "description": "CNN+LSTM睡眠监测，智能睡眠分析",
+        "price": 0,
+        "included": true,
+        "enabled": true
+      },
+      {
+        "id": "sos",
+        "label": "SOS守护",
+        "description": "紧急呼叫，压力监测，安全守护",
+        "price": 0,
+        "included": true,
+        "enabled": true
+      }
+    ],
+    "base_price": 299,
+    "size_price": 0,
+    "material_price": 0,
+    "color_price": 0,
+    "modules_price": 0,
+    "total_price": 299,
+    "currency": "USD",
+    "order_status": "待支付",
+    "payment_status": "未支付",
+    "payment_method": null,
+    "payment_time": null,
+    "transaction_id": "",
+    "payment_gateway": "",
+    "payment_amount": 0,
+    "refund_amount": 0,
+    "refund_status": "无退款",
+    "refund_time": null,
+    "refund_reason": "",
+    "payment_notes": "等待用户完成支付",
+    "shipping_address": {
+      "country": "中国",
+      "province": "广东省",
+      "city": "深圳市",
+      "district": "南山区",
+      "street": "科技园南区",
+      "postal_code": "518000",
+      "full_address": "广东省深圳市南山区科技园南区XX大厦A座1001室"
+    },
+    "billing_address": {
+      "country": "中国",
+      "province": "广东省",
+      "city": "深圳市",
+      "district": "南山区",
+      "street": "科技园南区",
+      "postal_code": "518000",
+      "full_address": "广东省深圳市南山区科技园南区XX大厦A座1001室"
+    },
+    "estimated_delivery": "2025-11-15",
+    "production_days": 15,
+    "configuration_hash": "abc123def456",
+    "notes": "标准配置，快速发货",
+    "source": "产品配置器",
+    "createdAt": 1729392000000,
+    "updatedAt": 1729392000000
+  },
+  {
+    "_id": "2",
+    "order_id": "CONFIG20251020002",
+    "user_id": "USER002",
+    "user_name": "李四",
+    "user_phone": "13900139002",
+    "user_email": "lisi@example.com",
+    "product_name": "AI太极·SOS RING",
+    "configuration": {
+      "size": "large",
+      "material": "gold",
+      "color": "rose",
+      "modules": {
+        "sleep": true,
+        "sos": true,
+        "health": true
+      }
+    },
+    "size_info": {
+      "id": "large",
+      "label": "大号",
+      "diameter": "20-22mm",
+      "circumference": "64-71mm",
+      "price": 0
+    },
+    "material_info": {
+      "id": "gold",
+      "label": "18K黄金",
+      "description": "奢华材质，保值收藏",
+      "price": 500,
+      "color": "#FFD700"
+    },
+    "color_info": {
+      "id": "rose",
+      "label": "玫瑰金",
+      "description": "优雅浪漫，温暖时尚",
+      "price": 50,
+      "bg": "bg-rose-400"
+    },
+    "modules_info": [
+      {
+        "id": "sleep",
+        "label": "睡眠优化",
+        "description": "CNN+LSTM睡眠监测，智能睡眠分析",
+        "price": 0,
+        "included": true,
+        "enabled": true
+      },
+      {
+        "id": "sos",
+        "label": "SOS守护",
+        "description": "紧急呼叫，压力监测，安全守护",
+        "price": 0,
+        "included": true,
+        "enabled": true
+      },
+      {
+        "id": "health",
+        "label": "健康监测",
+        "description": "心率血氧，运动追踪，健康报告",
+        "price": 100,
+        "included": false,
+        "enabled": true
+      }
+    ],
+    "base_price": 299,
+    "size_price": 0,
+    "material_price": 500,
+    "color_price": 50,
+    "modules_price": 100,
+    "total_price": 949,
+    "currency": "USD",
+    "order_status": "生产中",
+    "payment_status": "已支付",
+    "payment_method": "信用卡",
+    "payment_time": 1729397100000,
+    "transaction_id": "TXN_20251020002_005",
+    "payment_gateway": "Stripe",
+    "payment_amount": 949,
+    "refund_amount": 0,
+    "refund_status": "无退款",
+    "refund_time": null,
+    "refund_reason": "",
+    "payment_notes": "Visa信用卡支付，高端定制产品",
+    "shipping_address": {
+      "country": "中国",
+      "province": "北京市",
+      "city": "北京市",
+      "district": "朝阳区",
+      "street": "三里屯",
+      "postal_code": "100000",
+      "full_address": "北京市朝阳区三里屯SOHO A座2002室"
+    },
+    "billing_address": {
+      "country": "中国",
+      "province": "北京市",
+      "city": "北京市",
+      "district": "朝阳区",
+      "street": "三里屯",
+      "postal_code": "100000",
+      "full_address": "北京市朝阳区三里屯SOHO A座2002室"
+    },
+    "estimated_delivery": "2025-11-30",
+    "production_days": 25,
+    "configuration_hash": "def789ghi012",
+    "notes": "高端定制，需要额外生产时间",
+    "source": "产品配置器",
+    "createdAt": 1729392100000,
+    "updatedAt": 1729397100000
+  },
+  {
+    "_id": "3",
+    "order_id": "CONFIG20251020003",
+    "user_id": "USER003",
+    "user_name": "王五",
+    "user_phone": "13700137003",
+    "user_email": "wangwu@example.com",
+    "product_name": "AI太极·SOS RING",
+    "configuration": {
+      "size": "xlarge",
+      "material": "platinum",
+      "color": "blue",
+      "modules": {
+        "sleep": true,
+        "sos": true,
+        "health": true
+      }
+    },
+    "size_info": {
+      "id": "xlarge",
+      "label": "特大号",
+      "diameter": "22-24mm",
+      "circumference": "71-78mm",
+      "price": 50
+    },
+    "material_info": {
+      "id": "platinum",
+      "label": "铂金",
+      "description": "稀有金属，永恒经典",
+      "price": 800,
+      "color": "#E5E4E2"
+    },
+    "color_info": {
+      "id": "blue",
+      "label": "深空蓝",
+      "description": "深邃如海，沉稳大气",
+      "price": 50,
+      "bg": "bg-blue-600"
+    },
+    "modules_info": [
+      {
+        "id": "sleep",
+        "label": "睡眠优化",
+        "description": "CNN+LSTM睡眠监测，智能睡眠分析",
+        "price": 0,
+        "included": true,
+        "enabled": true
+      },
+      {
+        "id": "sos",
+        "label": "SOS守护",
+        "description": "紧急呼叫，压力监测，安全守护",
+        "price": 0,
+        "included": true,
+        "enabled": true
+      },
+      {
+        "id": "health",
+        "label": "健康监测",
+        "description": "心率血氧，运动追踪，健康报告",
+        "price": 100,
+        "included": false,
+        "enabled": true
+      }
+    ],
+    "base_price": 299,
+    "size_price": 50,
+    "material_price": 800,
+    "color_price": 50,
+    "modules_price": 100,
+    "total_price": 1299,
+    "currency": "USD",
+    "order_status": "已发货",
+    "payment_status": "已支付",
+    "payment_method": "支付宝",
+    "payment_time": 1729397400000,
+    "transaction_id": "ALI_20251020003_006",
+    "payment_gateway": "Alipay",
+    "payment_amount": 1299,
+    "refund_amount": 0,
+    "refund_status": "无退款",
+    "refund_time": null,
+    "refund_reason": "",
+    "payment_notes": "支付宝支付，国际订单加急处理",
+    "shipping_address": {
+      "country": "美国",
+      "province": "California",
+      "city": "San Francisco",
+      "district": "",
+      "street": "Silicon Valley",
+      "postal_code": "94025",
+      "full_address": "1234 Tech Way, Silicon Valley, CA 94025, USA"
+    },
+    "billing_address": {
+      "country": "美国",
+      "province": "California",
+      "city": "San Francisco",
+      "district": "",
+      "street": "Silicon Valley",
+      "postal_code": "94025",
+      "full_address": "1234 Tech Way, Silicon Valley, CA 94025, USA"
+    },
+    "estimated_delivery": "2025-10-25",
+    "production_days": 30,
+    "configuration_hash": "ghi345jkl678",
+    "notes": "国际订单，加急处理",
+    "source": "产品配置器",
+    "createdAt": 1729392200000,
+    "updatedAt": 1729397400000
+  },
+  {
+    "_id": "4",
+    "order_id": "CONFIG20251020004",
+    "user_id": "USER004",
+    "user_name": "赵六",
+    "user_phone": "13600136004",
+    "user_email": "zhaoliu@example.com",
+    "product_name": "AI太极·SOS RING",
+    "configuration": {
+      "size": "small",
+      "material": "ceramic",
+      "color": "silver",
+      "modules": {
+        "sleep": true,
+        "sos": true,
+        "health": false
+      }
+    },
+    "size_info": {
+      "id": "small",
+      "label": "小号",
+      "diameter": "16-18mm",
+      "circumference": "50-57mm",
+      "price": 0
+    },
+    "material_info": {
+      "id": "ceramic",
+      "label": "精密陶瓷",
+      "description": "高端质感，耐磨耐用",
+      "price": 100,
+      "color": "#F5F5F5"
+    },
+    "color_info": {
+      "id": "silver",
+      "label": "太空银",
+      "description": "未来科技，简约时尚",
+      "price": 0,
+      "bg": "bg-gray-400"
+    },
+    "modules_info": [
+      {
+        "id": "sleep",
+        "label": "睡眠优化",
+        "description": "CNN+LSTM睡眠监测，智能睡眠分析",
+        "price": 0,
+        "included": true,
+        "enabled": true
+      },
+      {
+        "id": "sos",
+        "label": "SOS守护",
+        "description": "紧急呼叫，压力监测，安全守护",
+        "price": 0,
+        "included": true,
+        "enabled": true
+      }
+    ],
+    "base_price": 299,
+    "size_price": 0,
+    "material_price": 100,
+    "color_price": 0,
+    "modules_price": 0,
+    "total_price": 399,
+    "currency": "USD",
+    "order_status": "已完成",
+    "payment_status": "已支付",
+    "payment_method": "微信支付",
+    "payment_time": 1729397700000,
+    "transaction_id": "WX_20251020004_007",
+    "payment_gateway": "WeChatPay",
+    "payment_amount": 399,
+    "refund_amount": 0,
+    "refund_status": "无退款",
+    "refund_time": null,
+    "refund_reason": "",
+    "payment_notes": "微信支付，陶瓷材质特殊工艺",
+    "shipping_address": {
+      "country": "中国",
+      "province": "上海市",
+      "city": "上海市",
+      "district": "浦东新区",
+      "street": "陆家嘴",
+      "postal_code": "200000",
+      "full_address": "上海市浦东新区陆家嘴金融中心XX大厦B座3001室"
+    },
+    "billing_address": {
+      "country": "中国",
+      "province": "上海市",
+      "city": "上海市",
+      "district": "浦东新区",
+      "street": "陆家嘴",
+      "postal_code": "200000",
+      "full_address": "上海市浦东新区陆家嘴金融中心XX大厦B座3001室"
+    },
+    "estimated_delivery": "2025-10-20",
+    "production_days": 20,
+    "configuration_hash": "jkl901mno234",
+    "notes": "陶瓷材质需要特殊工艺处理",
+    "source": "产品配置器",
+    "createdAt": 1729392300000,
+    "updatedAt": 1729397700000
+  },
+  {
+    "_id": "5",
+    "order_id": "CONFIG20251020005",
+    "user_id": "USER005",
+    "user_name": "陈七",
+    "user_phone": "13500135005",
+    "user_email": "chenqi@example.com",
+    "product_name": "AI太极·SOS RING",
+    "configuration": {
+      "size": "medium",
+      "material": "titanium",
+      "color": "black",
+      "modules": {
+        "sleep": true,
+        "sos": true,
+        "health": true
+      }
+    },
+    "size_info": {
+      "id": "medium",
+      "label": "中号",
+      "diameter": "18-20mm",
+      "circumference": "57-64mm",
+      "price": 0
+    },
+    "material_info": {
+      "id": "titanium",
+      "label": "钛合金",
+      "description": "轻量化，防过敏，适合日常佩戴",
+      "price": 0,
+      "color": "#C0C0C0"
+    },
+    "color_info": {
+      "id": "black",
+      "label": "经典黑",
+      "description": "深邃神秘，科技感十足",
+      "price": 0,
+      "bg": "bg-black"
+    },
+    "modules_info": [
+      {
+        "id": "sleep",
+        "label": "睡眠优化",
+        "description": "CNN+LSTM睡眠监测，智能睡眠分析",
+        "price": 0,
+        "included": true,
+        "enabled": true
+      },
+      {
+        "id": "sos",
+        "label": "SOS守护",
+        "description": "紧急呼叫，压力监测，安全守护",
+        "price": 0,
+        "included": true,
+        "enabled": true
+      },
+      {
+        "id": "health",
+        "label": "健康监测",
+        "description": "心率血氧，运动追踪，健康报告",
+        "price": 100,
+        "included": false,
+        "enabled": true
+      }
+    ],
+    "base_price": 299,
+    "size_price": 0,
+    "material_price": 0,
+    "color_price": 0,
+    "modules_price": 100,
+    "total_price": 399,
+    "currency": "USD",
+    "order_status": "已取消",
+    "payment_status": "已退款",
+    "payment_method": "银行转账",
+    "payment_time": 1729398000000,
+    "transaction_id": "BANK_20251020005_008",
+    "payment_gateway": "BankTransfer",
+    "payment_amount": 399,
+    "refund_amount": 399,
+    "refund_status": "全额退款",
+    "refund_time": 1729398300000,
+    "refund_reason": "用户主动取消订单，申请全额退款",
+    "payment_notes": "原银行转账已到账，已处理全额退款",
+    "shipping_address": {
+      "country": "中国",
+      "province": "广东省",
+      "city": "深圳市",
+      "district": "福田区",
+      "street": "华强北",
+      "postal_code": "518000",
+      "full_address": "广东省深圳市福田区华强北XX科技园C座1501室"
+    },
+    "billing_address": {
+      "country": "中国",
+      "province": "广东省",
+      "city": "深圳市",
+      "district": "福田区",
+      "street": "华强北",
+      "postal_code": "518000",
+      "full_address": "广东省深圳市福田区华强北XX科技园C座1501室"
+    },
+    "estimated_delivery": "2025-11-10",
+    "production_days": 15,
+    "configuration_hash": "mno567pqr890",
+    "notes": "用户主动取消订单，已全额退款",
+    "source": "产品配置器",
+    "createdAt": 1729392400000,
+    "updatedAt": 1729398300000
+  }
+]
+  
