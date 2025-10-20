@@ -18,6 +18,8 @@ import ANALYTICS from '../pages/analytics.jsx';
 import ORDER_CONFIRMATION from '../pages/order-confirmation.jsx';
 import PUBLISH_ADMIN from '../pages/publish-admin.jsx';
 import LANGUAGE_ADMIN from '../pages/language-admin.jsx';
+import AI_CUSTOMER-SERVICE from '../pages/ai-customer-service.jsx';
+import AI_ADMIN-DASHBOARD from '../pages/ai-admin-dashboard.jsx';
 export const routers = [{
   id: "home",
   component: HOME
@@ -78,4 +80,10 @@ export const routers = [{
 }, {
   id: "language-admin",
   component: LANGUAGE_ADMIN
+}, {
+  id: "ai-customer-service",
+  component: AI_CUSTOMER-SERVICE
+}, {
+  id: "ai-admin-dashboard",
+  component: AI_ADMIN-DASHBOARD
 }]

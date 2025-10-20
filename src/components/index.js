@@ -14,3 +14,6 @@ export * from './LanguageSearch.jsx';
 export * from './ABTestManager.jsx';
 export * from './MultilingualSEO.jsx';
 export * from './SitemapGenerator.jsx';
+export * from './AIChatWidget.jsx';
+export * from './AIModelCard.jsx';
+export * from './PromptEditor.jsx';
