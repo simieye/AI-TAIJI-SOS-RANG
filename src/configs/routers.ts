@@ -17,6 +17,7 @@ import ADMIN from '../pages/admin.jsx';
 import ANALYTICS from '../pages/analytics.jsx';
 import ORDER_CONFIRMATION from '../pages/order-confirmation.jsx';
 import PUBLISH_ADMIN from '../pages/publish-admin.jsx';
+import LANGUAGE_ADMIN from '../pages/language-admin.jsx';
 export const routers = [{
   id: "home",
   component: HOME
@@ -74,4 +75,7 @@ export const routers = [{
 }, {
   id: "publish-admin",
   component: PUBLISH_ADMIN
+}, {
+  id: "language-admin",
+  component: LANGUAGE_ADMIN
 }]

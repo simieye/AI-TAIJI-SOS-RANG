@@ -9,3 +9,6 @@ export * from './AIModelSelector.jsx';
 export * from './ContentCalendar.jsx';
 export * from './PublishStatus.jsx';
 export * from './PlatformConfig.jsx';
+export * from './LanguageContentEditor.jsx';
+export * from './LanguageSearch.jsx';
+export * from './ABTestManager.jsx';
