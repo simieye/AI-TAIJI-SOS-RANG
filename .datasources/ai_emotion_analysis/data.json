@@ -1,0 +1,190 @@
+
+[
+  {
+    "analysis_id": "emotion_analysis_001",
+    "conversation_id": "conv_20250121_001",
+    "message_id": "msg_001",
+    "user_id": "user_12345",
+    "emotion_type": "neutral",
+    "emotion_intensity": 0.3,
+    "sentiment_score": 0.1,
+    "keywords": ["需要", "老年", "SOS", "戒指", "MOQ"],
+    "confidence": 0.92,
+    "analysis_method": "hybrid",
+    "model_version": "emotion_v2.1",
+    "emotion_change_trend": "stable",
+    "emotion_triggers": ["商业咨询", "产品询问"],
+    "context_factors": {
+      "conversation_stage": "information_gathering",
+      "user_intent": "business_inquiry",
+      "time_of_day": "morning"
+    },
+    "linguistic_features": {
+      "sentence_length": 8,
+      "word_count": 8,
+      "punctuation_usage": "question_mark",
+      "formality_level": "formal"
+    },
+    "behavioral_indicators": {
+      "response_speed": "normal",
+      "engagement_level": "medium"
+    },
+    "risk_level": "low",
+    "escalation_triggered": false,
+    "analysis_depth": "standard",
+    "data_sources": ["text"],
+    "processing_time": 150,
+    "quality_score": 0.89,
+    "session_context": {
+      "previous_messages": 2,
+      "session_duration": 180,
+      "topic_consistency": "high"
+    },
+    "user_profile_match": 0.85,
+    "predicted_next_emotion": "positive",
+    "confidence_interval": {
+      "lower_bound": 0.85,
+      "upper_bound": 0.98
+    },
+    "anomaly_detected": false,
+    "analysis_metadata": {
+      "model_confidence": 0.92,
+      "feature_importance": {
+        "keywords": 0.4,
+        "sentiment": 0.3,
+        "context": 0.3
+      }
+    },
+    "created_at": "2025-01-21T10:30:15Z",
+    "updated_at": "2025-01-21T10:30:15Z"
+  },
+  {
+    "analysis_id": "emotion_analysis_002",
+    "conversation_id": "conv_20250121_002",
+    "message_id": "msg_002",
+    "user_id": "user_67890",
+    "emotion_type": "curious",
+    "emotion_intensity": 0.6,
+    "sentiment_score": 0.4,
+    "keywords": ["戒指", "SOS", "怎么用"],
+    "confidence": 0.88,
+    "analysis_method": "ml_model",
+    "model_version": "emotion_v2.1",
+    "emotion_change_trend": "improving",
+    "previous_emotion": "neutral",
+    "emotion_triggers": ["产品功能", "使用方法"],
+    "context_factors": {
+      "conversation_stage": "learning",
+      "user_intent": "functional_inquiry",
+      "product_familiarity": "low"
+    },
+    "linguistic_features": {
+      "sentence_length": 5,
+      "word_count": 5,
+      "punctuation_usage": "question_mark",
+      "formality_level": "casual"
+    },
+    "behavioral_indicators": {
+      "response_speed": "fast",
+      "engagement_level": "high"
+    },
+    "risk_level": "low",
+    "escalation_triggered": false,
+    "analysis_depth": "basic",
+    "data_sources": ["text"],
+    "processing_time": 120,
+    "quality_score": 0.91,
+    "session_context": {
+      "previous_messages": 0,
+      "session_duration": 60,
+      "topic_consistency": "medium"
+    },
+    "user_profile_match": 0.78,
+    "predicted_next_emotion": "positive",
+    "confidence_interval": {
+      "lower_bound": 0.80,
+      "upper_bound": 0.95
+    },
+    "anomaly_detected": false,
+    "analysis_metadata": {
+      "model_confidence": 0.88,
+      "feature_importance": {
+        "keywords": 0.5,
+        "sentiment": 0.3,
+        "context": 0.2
+      }
+    },
+    "created_at": "2025-01-21T11:15:30Z",
+    "updated_at": "2025-01-21T11:15:30Z"
+  },
+  {
+    "analysis_id": "emotion_analysis_003",
+    "conversation_id": "conv_20250121_003",
+    "message_id": "msg_003",
+    "user_id": "user_11111",
+    "emotion_type": "concerned",
+    "emotion_intensity": 0.8,
+    "sentiment_score": -0.6,
+    "keywords": ["续航", "太短", "不满意"],
+    "confidence": 0.94,
+    "analysis_method": "hybrid",
+    "model_version": "emotion_v2.1",
+    "emotion_change_trend": "deteriorating",
+    "previous_emotion": "neutral",
+    "emotion_triggers": ["产品问题", "使用体验"],
+    "context_factors": {
+      "conversation_stage": "complaint",
+      "user_intent": "issue_reporting",
+      "customer_satisfaction": "low"
+    },
+    "linguistic_features": {
+      "sentence_length": 4,
+      "word_count": 4,
+      "punctuation_usage": "none",
+      "formality_level": "direct",
+      "negative_words": ["太短", "不满意"]
+    },
+    "behavioral_indicators": {
+      "response_speed": "immediate",
+      "engagement_level": "high",
+      "frustration_level": "medium"
+    },
+    "emotion_duration": 45,
+    "peak_intensity": 0.8,
+    "intervention_applied": "empathy_response",
+    "intervention_effectiveness": 0.7,
+    "risk_level": "medium",
+    "escalation_triggered": true,
+    "analysis_depth": "comprehensive",
+    "data_sources": ["text", "behavioral"],
+    "processing_time": 200,
+    "quality_score": 0.93,
+    "session_context": {
+      "previous_messages": 3,
+      "session_duration": 300,
+      "topic_consistency": "high"
+    },
+    "user_profile_match": 0.82,
+    "predicted_next_emotion": "frustrated",
+    "confidence_interval": {
+      "lower_bound": 0.88,
+      "upper_bound": 0.99
+    },
+    "anomaly_detected": true,
+    "anomaly_type": "sentiment_spike",
+    "human_validation": true,
+    "validation_score": 0.9,
+    "analysis_metadata": {
+      "model_confidence": 0.94,
+      "feature_importance": {
+        "sentiment": 0.6,
+        "keywords": 0.3,
+        "context": 0.1
+      },
+      "alert_triggered": true,
+      "alert_reason": "high_negative_sentiment"
+    },
+    "created_at": "2025-01-21T14:20:45Z",
+    "updated_at": "2025-01-21T14:20:45Z"
+  }
+]

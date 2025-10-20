@@ -1,0 +1,329 @@
+
+{
+  "name": "ai_emotion_analysis",
+  "description": "用户情绪分析数据模型，存储AI客服对用户情绪的实时分析结果",
+  "fields": [
+    {
+      "name": "analysis_id",
+      "type": "string",
+      "description": "分析唯一标识符",
+      "required": true,
+      "index": true
+    },
+    {
+      "name": "conversation_id",
+      "type": "string",
+      "description": "关联的会话ID",
+      "required": true,
+      "index": true
+    },
+    {
+      "name": "message_id",
+      "type": "string",
+      "description": "关联的消息ID",
+      "required": true,
+      "index": true
+    },
+    {
+      "name": "user_id",
+      "type": "string",
+      "description": "用户ID",
+      "required": false,
+      "index": true
+    },
+    {
+      "name": "emotion_type",
+      "type": "string",
+      "description": "情绪类型：positive/negative/neutral/excited/anxious/confused/frustrated/satisfied",
+      "required": true,
+      "index": true
+    },
+    {
+      "name": "emotion_intensity",
+      "type": "number",
+      "description": "情绪强度 0-1",
+      "required": true,
+      "defaultValue": 0.5
+    },
+    {
+      "name": "sentiment_score",
+      "type": "number",
+      "description": "情感得分 -1到1",
+      "required": false,
+      "defaultValue": 0
+    },
+    {
+      "name": "keywords",
+      "type": "array",
+      "description": "情绪关键词列表",
+      "required": false,
+      "defaultValue": []
+    },
+    {
+      "name": "confidence",
+      "type": "number",
+      "description": "分析置信度 0-1",
+      "required": true,
+      "defaultValue": 0.8
+    },
+    {
+      "name": "analysis_method",
+      "type": "string",
+      "description": "分析方法：rule_based/ml_model/hybrid",
+      "required": false,
+      "defaultValue": "hybrid"
+    },
+    {
+      "name": "model_version",
+      "type": "string",
+      "description": "使用的模型版本",
+      "required": false
+    },
+    {
+      "name": "emotion_change_trend",
+      "type": "string",
+      "description": "情绪变化趋势：improving/stable/deteriorating/fluctuating",
+      "required": false
+    },
+    {
+      "name": "previous_emotion",
+      "type": "string",
+      "description": "前一次情绪状态",
+      "required": false
+    },
+    {
+      "name": "emotion_triggers",
+      "type": "array",
+      "description": "情绪触发因素",
+      "required": false,
+      "defaultValue": []
+    },
+    {
+      "name": "context_factors",
+      "type": "object",
+      "description": "上下文影响因素（JSON格式）",
+      "required": false,
+      "defaultValue": {}
+    },
+    {
+      "name": "physiological_indicators",
+      "type": "object",
+      "description": "生理指标（如果可用）",
+      "required": false,
+      "defaultValue": {}
+    },
+    {
+      "name": "linguistic_features",
+      "type": "object",
+      "description": "语言特征分析结果",
+      "required": false,
+      "defaultValue": {}
+    },
+    {
+      "name": "behavioral_indicators",
+      "type": "object",
+      "description": "行为指标",
+      "required": false,
+      "defaultValue": {}
+    },
+    {
+      "name": "emotion_duration",
+      "type": "number",
+      "description": "情绪持续时间（秒）",
+      "required": false
+    },
+    {
+      "name": "peak_intensity",
+      "type": "number",
+      "description": "情绪峰值强度",
+      "required": false
+    },
+    {
+      "name": "recovery_time",
+      "type": "number",
+      "description": "情绪恢复时间（秒）",
+      "required": false
+    },
+    {
+      "name": "intervention_applied",
+      "type": "string",
+      "description": "应用的干预措施",
+      "required": false
+    },
+    {
+      "name": "intervention_effectiveness",
+      "type": "number",
+      "description": "干预效果评分 0-1",
+      "required": false
+    },
+    {
+      "name": "risk_level",
+      "type": "string",
+      "description": "风险等级：low/medium/high/critical",
+      "required": false,
+      "defaultValue": "low"
+    },
+    {
+      "name": "escalation_triggered",
+      "type": "boolean",
+      "description": "是否触发升级",
+      "required": false,
+      "defaultValue": false
+    },
+    {
+      "name": "analysis_depth",
+      "type": "string",
+      "description": "分析深度：basic/standard/comprehensive",
+      "required": false,
+      "defaultValue": "standard"
+    },
+    {
+      "name": "data_sources",
+      "type": "array",
+      "description": "数据来源列表",
+      "required": false,
+      "defaultValue": ["text"]
+    },
+    {
+      "name": "processing_time",
+      "type": "number",
+      "description": "分析处理时间（毫秒）",
+      "required": false
+    },
+    {
+      "name": "quality_score",
+      "type": "number",
+      "description": "分析质量评分 0-1",
+      "required": false,
+      "defaultValue": 0.8
+    },
+    {
+      "name": "human_validation",
+      "type": "boolean",
+      "description": "是否经过人工验证",
+      "required": false,
+      "defaultValue": false
+    },
+    {
+      "name": "validation_score",
+      "type": "number",
+      "description": "人工验证评分 0-1",
+      "required": false
+    },
+    {
+      "name": "feedback_received",
+      "type": "boolean",
+      "description": "是否收到反馈",
+      "required": false,
+      "defaultValue": false
+    },
+    {
+      "name": "feedback_rating",
+      "type": "number",
+      "description": "反馈评分 1-5",
+      "required": false
+    },
+    {
+      "name": "session_context",
+      "type": "object",
+      "description": "会话上下文信息",
+      "required": false,
+      "defaultValue": {}
+    },
+    {
+      "name": "user_profile_match",
+      "type": "number",
+      "description": "与用户画像匹配度 0-1",
+      "required": false
+    },
+    {
+      "name": "predicted_next_emotion",
+      "type": "string",
+      "description": "预测的下次情绪状态",
+      "required": false
+    },
+    {
+      "name": "confidence_interval",
+      "type": "object",
+      "description": "置信区间",
+      "required": false,
+      "defaultValue": {}
+    },
+    {
+      "name": "anomaly_detected",
+      "type": "boolean",
+      "description": "是否检测到异常",
+      "required": false,
+      "defaultValue": false
+    },
+    {
+      "name": "anomaly_type",
+      "type": "string",
+      "description": "异常类型",
+      "required": false
+    },
+    {
+      "name": "analysis_metadata",
+      "type": "object",
+      "description": "分析元数据",
+      "required": false,
+      "defaultValue": {}
+    },
+    {
+      "name": "created_at",
+      "type": "datetime",
+      "description": "分析时间",
+      "required": true,
+      "defaultValue": "now"
+    },
+    {
+      "name": "updated_at",
+      "type": "datetime",
+      "description": "更新时间",
+      "required": true,
+      "defaultValue": "now"
+    }
+  ],
+  "indexes": [
+    {
+      "name": "analysis_id_index",
+      "fields": ["analysis_id"],
+      "unique": true
+    },
+    {
+      "name": "conversation_id_index",
+      "fields": ["conversation_id"],
+      "unique": false
+    },
+    {
+      "name": "message_id_index",
+      "fields": ["message_id"],
+      "unique": false
+    },
+    {
+      "name": "user_id_index",
+      "fields": ["user_id"],
+      "unique": false
+    },
+    {
+      "name": "emotion_type_index",
+      "fields": ["emotion_type"],
+      "unique": false
+    },
+    {
+      "name": "created_at_index",
+      "fields": ["created_at"],
+      "unique": false
+    },
+    {
+      "name": "risk_level_index",
+      "fields": ["risk_level"],
+      "unique": false
+    },
+    {
+      "name": "escalation_triggered_index",
+      "fields": ["escalation_triggered"],
+      "unique": false
+    }
+  ]
+}

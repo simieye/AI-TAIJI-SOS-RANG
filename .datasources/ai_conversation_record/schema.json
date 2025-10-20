@@ -1,226 +1,241 @@
 
 {
   "name": "ai_conversation_record",
-  "title": "AI客服对话记录",
-  "schemas": [
+  "description": "AI客服对话记录数据模型，存储用户与AI客服的完整对话历史",
+  "fields": [
     {
       "name": "conversation_id",
-      "title": "对话ID",
-      "type": "String"
+      "type": "string",
+      "description": "会话唯一标识符",
+      "required": true,
+      "index": true
     },
     {
       "name": "user_id",
-      "title": "用户ID",
-      "type": "String"
+      "type": "string",
+      "description": "用户ID",
+      "required": false,
+      "index": true
     },
     {
       "name": "session_id",
-      "title": "会话ID",
-      "type": "String"
+      "type": "string",
+      "description": "会话session ID",
+      "required": true,
+      "index": true
     },
     {
-      "name": "message_id",
-      "title": "消息ID",
-      "type": "String"
+      "name": "user_message",
+      "type": "text",
+      "description": "用户消息内容",
+      "required": true
+    },
+    {
+      "name": "ai_response",
+      "type": "text",
+      "description": "AI回复内容",
+      "required": true
     },
     {
       "name": "message_type",
-      "title": "消息类型",
-      "type": "String"
-    },
-    {
-      "name": "message_content",
-      "title": "消息内容",
-      "type": "MultiLineString"
-    },
-    {
-      "name": "ai_model_id",
-      "title": "AI模型ID",
-      "type": "String"
-    },
-    {
-      "name": "ai_model_name",
-      "title": "AI模型名称",
-      "type": "String"
-    },
-    {
-      "name": "ai_provider",
-      "title": "AI服务提供商",
-      "type": "String"
-    },
-    {
-      "name": "message_timestamp",
-      "title": "消息时间戳",
-      "type": "DateTime",
-      "format": "timestamp-ms"
-    },
-    {
-      "name": "conversation_status",
-      "title": "对话状态",
-      "type": "String"
-    },
-    {
-      "name": "message_sequence",
-      "title": "消息序号",
-      "type": "Number"
-    },
-    {
-      "name": "emotion_label",
-      "title": "情绪标签",
-      "type": "String"
-    },
-    {
-      "name": "emotion_score",
-      "title": "情绪评分",
-      "type": "Number"
-    },
-    {
-      "name": "response_time",
-      "title": "响应时间(毫秒)",
-      "type": "Number"
-    },
-    {
-      "name": "satisfaction_rating",
-      "title": "满意度评分",
-      "type": "Number"
-    },
-    {
-      "name": "user_feedback",
-      "title": "用户反馈",
-      "type": "MultiLineString"
-    },
-    {
-      "name": "token_count",
-      "title": "Token数量",
-      "type": "Number"
-    },
-    {
-      "name": "cost_amount",
-      "title": "费用金额",
-      "type": "Number"
-    },
-    {
-      "name": "currency",
-      "title": "货币类型",
-      "type": "String"
+      "type": "string",
+      "description": "消息类型：user/ai/system",
+      "required": true,
+      "defaultValue": "user"
     },
     {
       "name": "intent",
-      "title": "对话意图",
-      "type": "String"
+      "type": "string",
+      "description": "识别的意图类型",
+      "required": false
+    },
+    {
+      "name": "emotion",
+      "type": "string",
+      "description": "情绪标签：positive/neutral/negative/concerned/confused",
+      "required": false
     },
     {
       "name": "confidence",
-      "title": "置信度",
-      "type": "Number"
+      "type": "number",
+      "description": "AI响应置信度 0-1",
+      "required": false,
+      "defaultValue": 0.8
     },
     {
-      "name": "is_edited",
-      "title": "是否已编辑",
-      "type": "Boolean"
+      "name": "response_time",
+      "type": "number",
+      "description": "响应时间（秒）",
+      "required": false
     },
     {
-      "name": "edited_timestamp",
-      "title": "编辑时间戳",
-      "type": "DateTime",
-      "format": "timestamp-ms"
+      "name": "satisfaction_score",
+      "type": "number",
+      "description": "用户满意度评分 1-5",
+      "required": false
     },
     {
-      "name": "is_deleted",
-      "title": "是否已删除",
-      "type": "Boolean"
+      "name": "model_used",
+      "type": "string",
+      "description": "使用的AI模型",
+      "required": false,
+      "defaultValue": "gpt-4o"
     },
     {
-      "name": "deleted_timestamp",
-      "title": "删除时间戳",
-      "type": "DateTime",
-      "format": "timestamp-ms"
+      "name": "prompt_template",
+      "type": "string",
+      "description": "使用的Prompt模板ID",
+      "required": false
     },
     {
-      "name": "parent_message_id",
-      "title": "父消息ID",
-      "type": "String"
+      "name": "tools_called",
+      "type": "array",
+      "description": "调用的工具列表",
+      "required": false,
+      "defaultValue": []
     },
     {
-      "name": "thread_id",
-      "title": "对话线程ID",
-      "type": "String"
-    },
-    {
-      "name": "context_length",
-      "title": "上下文长度",
-      "type": "Number"
-    },
-    {
-      "name": "model_parameters",
-      "title": "模型参数",
-      "type": "Object",
-      "items": {
-        "type": "String"
-      }
-    },
-    {
-      "name": "error_code",
-      "title": "错误代码",
-      "type": "String"
-    },
-    {
-      "name": "error_message",
-      "title": "错误信息",
-      "type": "MultiLineString"
-    },
-    {
-      "name": "retry_count",
-      "title": "重试次数",
-      "type": "Number"
-    },
-    {
-      "name": "is_cached",
-      "title": "是否缓存",
-      "type": "Boolean"
-    },
-    {
-      "name": "cache_hit",
-      "title": "缓存命中",
-      "type": "Boolean"
-    },
-    {
-      "name": "metadata",
-      "title": "元数据",
-      "type": "Object",
-      "items": {
-        "type": "String"
-      }
-    },
-    {
-      "name": "tags",
-      "title": "标签",
-      "type": "Array",
-      "items": {
-        "type": "String"
-      }
+      "name": "context_data",
+      "type": "object",
+      "description": "上下文数据（JSON格式）",
+      "required": false,
+      "defaultValue": {}
     },
     {
       "name": "source",
-      "title": "来源渠道",
-      "type": "String"
+      "type": "string",
+      "description": "对话来源：web/widget/mobile/api",
+      "required": false,
+      "defaultValue": "web"
     },
     {
-      "name": "device_info",
-      "title": "设备信息",
-      "type": "Object",
-      "items": {
-        "type": "String"
-      }
+      "name": "language",
+      "type": "string",
+      "description": "对话语言",
+      "required": false,
+      "defaultValue": "zh"
     },
     {
-      "name": "location_info",
-      "title": "位置信息",
-      "type": "Object",
-      "items": {
-        "type": "String"
-      }
+      "name": "region",
+      "type": "string",
+      "description": "用户地区",
+      "required": false
+    },
+    {
+      "name": "user_agent",
+      "type": "string",
+      "description": "用户代理信息",
+      "required": false
+    },
+    {
+      "name": "ip_address",
+      "type": "string",
+      "description": "IP地址",
+      "required": false
+    },
+    {
+      "name": "conversion_status",
+      "type": "string",
+      "description": "转化状态：lead/opportunity/customer/lost",
+      "required": false
+    },
+    {
+      "name": "tags",
+      "type": "array",
+      "description": "对话标签",
+      "required": false,
+      "defaultValue": []
+    },
+    {
+      "name": "feedback",
+      "type": "object",
+      "description": "用户反馈信息",
+      "required": false,
+      "defaultValue": {}
+    },
+    {
+      "name": "status",
+      "type": "string",
+      "description": "对话状态：active/completed/transferred/abandoned",
+      "required": false,
+      "defaultValue": "active"
+    },
+    {
+      "name": "priority",
+      "type": "number",
+      "description": "优先级 1-5",
+      "required": false,
+      "defaultValue": 3
+    },
+    {
+      "name": "assigned_agent",
+      "type": "string",
+      "description": "分配的客服人员",
+      "required": false
+    },
+    {
+      "name": "escalation_reason",
+      "type": "string",
+      "description": "升级原因",
+      "required": false
+    },
+    {
+      "name": "resolution_time",
+      "type": "number",
+      "description": "解决时间（秒）",
+      "required": false
+    },
+    {
+      "name": "first_response_time",
+      "type": "number",
+      "description": "首次响应时间（秒）",
+      "required": false
+    },
+    {
+      "name": "created_at",
+      "type": "datetime",
+      "description": "创建时间",
+      "required": true,
+      "defaultValue": "now"
+    },
+    {
+      "name": "updated_at",
+      "type": "datetime",
+      "description": "更新时间",
+      "required": true,
+      "defaultValue": "now"
+    }
+  ],
+  "indexes": [
+    {
+      "name": "conversation_id_index",
+      "fields": ["conversation_id"],
+      "unique": false
+    },
+    {
+      "name": "user_id_index", 
+      "fields": ["user_id"],
+      "unique": false
+    },
+    {
+      "name": "created_at_index",
+      "fields": ["created_at"],
+      "unique": false
+    },
+    {
+      "name": "intent_index",
+      "fields": ["intent"],
+      "unique": false
+    },
+    {
+      "name": "emotion_index",
+      "fields": ["emotion"],
+      "unique": false
+    },
+    {
+      "name": "status_index",
+      "fields": ["status"],
+      "unique": false
     }
   ]
 }
-  
