@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 // @ts-ignore;
 import { Button, Input, Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui';
 // @ts-ignore;
-import { ArrowLeft, Send, Bot, User, Settings, History, Sparkles, Brain, Cpu, Globe, Zap, MessageCircle, Clock, CheckCircle, AlertCircle, Copy, Download, RefreshCw, Mic, MicOff, Paperclip, Headphones, Users, Phone } from 'lucide-react';
+import { ArrowLeft, Send, Bot, User, Settings, History, Sparkles, Brain, Cpu, Globe, Zap, MessageCircle, Clock, CheckCircle, AlertCircle, Copy, Download, RefreshCw, Mic, MicOff, Paperclip, Headphones, Users, Phone, Shield } from 'lucide-react';
 
 import { Navigation } from '@/components/Navigation';
 import { AuthGuard } from '@/components/AuthGuard';
