@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 // @ts-ignore;
 import { Button } from '@/components/ui';
 // @ts-ignore;
-import { ChevronRight, Shield, Moon, Activity, Cpu, Database, Globe, Zap, Lock, Download, FileText, Calendar, User, Mail, CheckCircle } from 'lucide-react';
+import { ChevronRight, Shield, Moon, Activity, Cpu, Database, Globe, Zap, Lock, Download, FileText, Calendar, User, Mail, CheckCircle, Eye, Globe2, Loader, Clock, BookOpen, Languages, ExternalLink, X } from 'lucide-react';
 
 import { Navigation } from '@/components/Navigation';
 export default function Product(props) {
@@ -12,11 +12,17 @@ export default function Product(props) {
   } = props;
   const [activeLayer, setActiveLayer] = useState(0);
   const [showDownloadModal, setShowDownloadModal] = useState(false);
+  const [showPreviewModal, setShowPreviewModal] = useState(false);
   const [downloadStarted, setDownloadStarted] = useState(false);
+  const [downloadProgress, setDownloadProgress] = useState(0);
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [agreedToTerms, setAgreedToTerms] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useState('zh');
+  const [selectedVersion, setSelectedVersion] = useState('v1.0');
+  const [previewPage, setPreviewPage] = useState(1);
+  const [isGeneratingPreview, setIsGeneratingPreview] = useState(false);
   const layers = [{
     name: '传感层',
     icon: Activity,
@@ -39,8 +45,11 @@ export default function Product(props) {
     description: 'IoA 多智能体互联'
   }];
 
-  // 白皮书内容
-  const whitepaperContent = `AI太极·SOS RING 智能戒指产品白皮书（v1.0）
+  // 多语言白皮书内容
+  const whitepaperContent = {
+    zh: {
+      title: 'AI太极·SOS RING 智能戒指产品白皮书（v1.0）',
+      content: `AI太极·SOS RING 智能戒指产品白皮书（v1.0）
 
 封面页
 AI太极·SOS RING 智能戒指白皮书
@@ -213,28 +222,263 @@ Web3生态：NFT健康凭证与DAO分润模型
 封底
 AI太极·SOS RING
  "以太极之平衡，守护AI之觉醒。"
- 官网：www.aitaiji.com ｜ 联系：sleep@aitaiji.com`;
+ 官网：www.aitaiji.com ｜ 联系：sleep@aitaiji.com`
+    },
+    en: {
+      title: 'AI Taiji·SOS RING Smart Ring Whitepaper (v1.0)',
+      content: `AI Taiji·SOS RING Smart Ring Whitepaper (v1.0)
+
+Cover Page
+AI Taiji·SOS RING Smart Ring Whitepaper
+ Sovereign AI × Sleep Optimization × Safety Protection
+ ©2025 AI Taiji Co., Ltd. – Shenzhen | info@aitaiji.com
+
+1. Product Vision and Mission
+AI Taiji is committed to building "human-AI symbiotic nodes in the era of sovereign AI".
+ SOS Ring is not just a wearable device, but also a Personal AI Node in the AI Taiji ecosystem.
+ It integrates AI algorithms, sensor science, and edge intelligence with the philosophy of "yin-yang balance" to achieve perception, understanding, and protection of human body states.
+Core Mission:
+Enable every user to have their own sovereign AI health entity, achieving "better sleep and safer living".
+
+2. Market Background and Industry Opportunities
+Global Smart Ring Market Trends
+The global smart ring market is expected to reach $4.2 billion in 2025 (CAGR 28%).
+
+Health + safety dual-function product demand is rapidly rising, especially in sleep health, women's health, and elderly safety fields.
+
+User needs are shifting from "passive monitoring" to "AI active intervention and prediction".
+
+Technology Turning Points
+Edge AI chip power consumption reduced by 50%, supporting local inference;
+
+Multimodal sensors can integrate heart rate, body temperature, and motion signals within 5mm space;
+
+IoA protocol (Internet of Agents) makes agent interconnection a reality.
+
+3. Product Definition and Core Value
+Product Definition
+AI Taiji·SOS RING is a smart ring that integrates AI sleep optimization, health monitoring, emergency protection, and sovereign AI computing.
+ It can independently complete physiological perception, AI algorithm inference, and secure data transmission, forming a key edge node of AI Taiji OS.
+Core Value
+Module
+User Value
+Technical Value
+Sleep Optimization
+Deep sleep ratio ↑20%, fatigue prediction
+Multimodal AI fusion (PPG+EDA+IMU)
+Safety Protection
+Automatic SOS trigger, zero-delay response
+Edge AI detection + sovereign encrypted channel
+Data Sovereignty
+User complete control
+Web3 data ownership + private edge storage
+Intelligent Collaboration
+IoA ecosystem interconnection
+Real-time synchronization with AI Taiji OS agents
+
+4. System Overview (System Architecture Diagram)
+┌────────────────────────────────────┐
+│           AI Taiji·SOS RING System Overview Diagram        │
+├────────────────────────────────────┤
+│ ① Sensor Layer: PPG / EDA / Body Temp / IMU / GSR        │
+│ ② Edge AI Layer: Small Large Model Edge Version + TaijiOS Light Node │
+│ ③ Communication Layer: BLE 5.2 + Web3 Secure Channel + NFC Interface │
+│ ④ Sovereign Data Layer: Local Database + IPFS Decentralized Backup │
+│ ⑤ Application Layer: AI Taiji App / Medical API / Enterprise Health Console │
+└────────────────────────────────────┘
+
+5. Functional Layers and Algorithm Flow
+Functional Layers
+Perception Layer: Real-time collection of HR, SpO₂, skin temperature, EDA, motion.
+
+Computing Layer: AI Taiji Edge OS executes lightweight models (CNN-LSTM), offline sleep stage determination.
+
+Decision Layer: AI agent judges state → triggers prompts or SOS.
+
+Linkage Layer: Synchronizes to AI Taiji OS ecosystem, collaborates with smart home or medical systems.
+
+Algorithm Flow (Pseudo Code Overview)
+if HRV < threshold and EDA↑:
+    sleep_stage = 'Deep'
+elif motion↑ and HRV irregular:
+    sleep_stage = 'REM'
+if abnormal(HR < 40 or >120):
+    trigger_SOS()
+
+6. Hardware Architecture and Innovation Points
+Module
+Specification
+Innovation
+Main Chip
+RISC-V + NPU AI Acceleration
+Support local inference and learning
+Sensor Array
+PPG+EDA+Temp+IMU
+5-in-1 low-power array design
+Communication Interface
+BLE 5.2 / NFC / USB-C Dock
+Dual-mode energy-saving connection
+Battery Life
+7–10 days
+Dynamic sampling energy-saving strategy
+Material Design
+Titanium alloy + ceramic inner ring
+Balances thermal conductivity and hypoallergenic performance
+Charging System
+Wireless Qi standard
+30-minute fast charging
+
+7. AI Architecture and Sovereign Data Flow
+AI Taiji·SOS RING AI Architecture Diagram (Text Version)
+Input: Multimodal signals → Feature extraction (HRV, SpO₂, Temp, Motion)
+    ↓
+Edge AI Model (CNN+LSTM)
+    ↓
+Output 1: Sleep stage prediction (Wake/Light/Deep/REM)
+Output 2: Stress and anomaly detection (EDA mode)
+    ↓
+Agent Decision: Trigger prompt or SOS link
+    ↓
+Data Reporting: Encrypted signature → User App → AI Taiji Sovereign Node
+
+8. Application Ecosystem and Industry Scenarios
+Industry
+Scenario
+Integration Method
+Medical
+Sleep disorder monitoring
+Connect with hospital AI Taiji nodes
+Enterprise
+Employee health management
+Health dashboard + data anonymization
+Sports
+Recovery and training AI optimization
+Sync with fitness agents
+Smart Home
+Smart bedroom linkage
+Communicate with lighting/AC systems
+Government & Elderly Care
+Automatic SOS alarm
+Anonymous health monitoring gateway
+
+9. Data Security and Sovereign AI Mechanism
+End-to-end encryption (AES-256 + IPFS Hash)
+
+Zero-trust access control
+
+Web3 sovereign credentials (NFT health records)
+
+AI Taiji privacy governance protocol (Taiji Privacy Loop)
+
+Data residency optional: local / cloud / DAO nodes
+
+10. Business Model and Roadmap
+Phase
+Goal
+Core Tasks
+Q4 2025
+MVP Testing
+Prototype + algorithm validation
+H1 2026
+Medical Certification & Crowd Testing
+Data integration + ecosystem cooperation
+H2 2026
+Small Batch Production
+Enterprise/hospital customized versions
+2027
+Global Marketization
+B2C flagship + B2B cooperation
+
+Business Model:
+B2C: Hardware + AI Taiji App subscription ($9/month)
+
+B2B: Enterprise health management + medical API authorization
+
+Web3 Ecosystem: NFT health credentials and DAO profit-sharing model
+
+Back Cover
+AI Taiji·SOS RING
+ "With the balance of Taiji, guard the awakening of AI."
+ Website: www.aitaiji.com  | Contact: sleep@aitaiji.com`
+    }
+  };
+
+  // 版本信息
+  const versions = [{
+    id: 'v1.0',
+    name: 'v1.0',
+    date: '2025-01-15',
+    status: 'current'
+  }, {
+    id: 'v0.9',
+    name: 'v0.9',
+    date: '2024-12-01',
+    status: 'previous'
+  }];
+
+  // 语言选项
+  const languages = [{
+    code: 'zh',
+    name: '中文',
+    flag: '🇨🇳'
+  }, {
+    code: 'en',
+    name: 'English',
+    flag: '🇺🇸'
+  }];
+
+  // 预览页面内容
+  const getPreviewContent = (page, language) => {
+    const content = whitepaperContent[language].content;
+    const pages = content.split('\n\n');
+    return pages[page - 1] || '';
+  };
   const handleDownloadWhitepaper = () => {
     setShowDownloadModal(true);
   };
-  const handleDirectDownload = () => {
+  const handlePreviewWhitepaper = () => {
+    setShowPreviewModal(true);
+    setIsGeneratingPreview(true);
+    // 模拟生成预览
+    setTimeout(() => {
+      setIsGeneratingPreview(false);
+    }, 1000);
+  };
+  const handleDirectDownload = async () => {
+    setDownloadStarted(true);
+    setDownloadProgress(0);
+
+    // 模拟下载进度
+    const progressInterval = setInterval(() => {
+      setDownloadProgress(prev => {
+        if (prev >= 100) {
+          clearInterval(progressInterval);
+          return 100;
+        }
+        return prev + 10;
+      });
+    }, 200);
+
     // 创建PDF内容
-    const blob = new Blob([whitepaperContent], {
+    const content = whitepaperContent[selectedLanguage].content;
+    const blob = new Blob([content], {
       type: 'text/plain;charset=utf-8'
     });
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = 'AI太极_SOS_RING_产品白皮书_v1.0.txt';
+    link.download = `AI太极_SOS_RING_产品白皮书_${selectedLanguage}_${selectedVersion}.txt`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
     URL.revokeObjectURL(url);
-    setDownloadStarted(true);
+
+    // 下载完成后重置状态
     setTimeout(() => {
       setDownloadStarted(false);
+      setDownloadProgress(0);
       setShowDownloadModal(false);
-    }, 2000);
+    }, 3000);
   };
   const handleSubmitDownload = async () => {
     if (!name || !email || !agreedToTerms) {
@@ -256,7 +500,7 @@ AI太极·SOS RING
               company: '个人用户',
               position: '技术白皮书下载',
               phone: '',
-              message: '下载AI太极SOS RING产品白皮书',
+              message: `下载AI太极SOS RING产品白皮书 - ${selectedLanguage} - ${selectedVersion}`,
               cooperation_type: '技术白皮书',
               status: 'pending',
               created_at: new Date().toISOString()
@@ -266,11 +510,11 @@ AI太极·SOS RING
       }
 
       // 开始下载
-      handleDirectDownload();
+      await handleDirectDownload();
     } catch (error) {
       console.error('保存用户信息失败:', error);
       // 即使保存失败也允许下载
-      handleDirectDownload();
+      await handleDirectDownload();
     } finally {
       setIsSubmitting(false);
     }
@@ -429,6 +673,10 @@ AI太极·SOS RING
               <Download className="w-5 h-5 mr-2" />
               下载技术白皮书
             </Button>
+            <Button onClick={handlePreviewWhitepaper} className="border-gray-500 text-gray-400 hover:bg-gray-800 hover:text-white px-8 py-4 text-lg flex items-center">
+              <Eye className="w-5 h-5 mr-2" />
+              预览白皮书
+            </Button>
           </div>
         </div>
       </section>
@@ -437,17 +685,49 @@ AI太极·SOS RING
       {showDownloadModal && <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
           <div className="bg-gray-900 rounded-xl border border-gray-800 w-full max-w-md">
             <div className="p-6">
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-yellow-500/20 rounded-lg flex items-center justify-center mr-4">
-                  <FileText className="w-6 h-6 text-yellow-500" />
+              <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center">
+                  <div className="w-12 h-12 bg-yellow-500/20 rounded-lg flex items-center justify-center mr-4">
+                    <FileText className="w-6 h-6 text-yellow-500" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-yellow-500">下载技术白皮书</h3>
+                    <p className="text-sm text-gray-400">AI太极·SOS RING 智能戒指产品白皮书</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-xl font-bold text-yellow-500">下载技术白皮书</h3>
-                  <p className="text-sm text-gray-400">AI太极·SOS RING 智能戒指产品白皮书（v1.0）</p>
-                </div>
+                <button onClick={() => setShowDownloadModal(false)} className="text-gray-400 hover:text-white">
+                  <X className="w-5 h-5" />
+                </button>
               </div>
 
               {!downloadStarted ? <>
+                  {/* Language and Version Selection */}
+                  <div className="grid grid-cols-2 gap-4 mb-6">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-300 mb-2">
+                        <Languages className="w-4 h-4 inline mr-2" />
+                        语言版本
+                      </label>
+                      <select value={selectedLanguage} onChange={e => setSelectedLanguage(e.target.value)} className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-yellow-500">
+                        {languages.map(lang => <option key={lang.code} value={lang.code}>
+                            {lang.flag} {lang.name}
+                          </option>)}
+                      </select>
+                    </div>
+                    
+                    <div>
+                      <label className="block text-sm font-medium text-gray-300 mb-2">
+                        <Clock className="w-4 h-4 inline mr-2" />
+                        版本
+                      </label>
+                      <select value={selectedVersion} onChange={e => setSelectedVersion(e.target.value)} className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-yellow-500">
+                        {versions.map(version => <option key={version.id} value={version.id}>
+                            {version.name} ({version.date})
+                          </option>)}
+                      </select>
+                    </div>
+                  </div>
+
                   <div className="space-y-4 mb-6">
                     <div>
                       <label className="block text-sm font-medium text-gray-300 mb-2">
@@ -483,11 +763,112 @@ AI太极·SOS RING
                   </div>
                 </> : <div className="text-center py-8">
                   <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <CheckCircle className="w-8 h-8 text-green-500" />
+                    {downloadProgress < 100 ? <Loader className="w-8 h-8 text-green-500 animate-spin" /> : <CheckCircle className="w-8 h-8 text-green-500" />}
                   </div>
-                  <h4 className="text-lg font-bold text-green-500 mb-2">下载已开始！</h4>
-                  <p className="text-sm text-gray-400">白皮书正在下载到您的设备</p>
+                  <h4 className="text-lg font-bold text-green-500 mb-2">
+                    {downloadProgress < 100 ? `下载中... ${downloadProgress}%` : '下载完成！'}
+                  </h4>
+                  <p className="text-sm text-gray-400">
+                    {downloadProgress < 100 ? '白皮书正在下载到您的设备' : '白皮书已保存到您的设备'}
+                  </p>
+                  {downloadProgress < 100 && <div className="w-full bg-gray-700 rounded-full h-2 mt-4">
+                      <div className="bg-green-500 h-2 rounded-full transition-all duration-300" style={{
+                width: `${downloadProgress}%`
+              }}></div>
+                    </div>}
                 </div>}
+            </div>
+          </div>
+        </div>}
+
+      {/* Preview Modal */}
+      {showPreviewModal && <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="bg-gray-900 rounded-xl border border-gray-800 w-full max-w-4xl max-h-[90vh] flex flex-col">
+            <div className="p-6 border-b border-gray-800">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center">
+                  <div className="w-12 h-12 bg-yellow-500/20 rounded-lg flex items-center justify-center mr-4">
+                    <BookOpen className="w-6 h-6 text-yellow-500" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-yellow-500">白皮书预览</h3>
+                    <p className="text-sm text-gray-400">{whitepaperContent[selectedLanguage].title}</p>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-3">
+                  {/* Language Selector */}
+                  <select value={selectedLanguage} onChange={e => setSelectedLanguage(e.target.value)} className="bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-yellow-500">
+                    {languages.map(lang => <option key={lang.code} value={lang.code}>
+                        {lang.flag} {lang.name}
+                      </option>)}
+                  </select>
+                  
+                  <button onClick={() => setShowPreviewModal(false)} className="text-gray-400 hover:text-white">
+                    <X className="w-5 h-5" />
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex-1 overflow-hidden">
+              {isGeneratingPreview ? <div className="flex items-center justify-center h-full">
+                  <div className="text-center">
+                    <Loader className="w-12 h-12 text-yellow-500 animate-spin mx-auto mb-4" />
+                    <p className="text-gray-400">正在生成预览...</p>
+                  </div>
+                </div> : <div className="flex h-full">
+                  {/* Page Navigation */}
+                  <div className="w-48 bg-gray-800 p-4 border-r border-gray-700">
+                    <h4 className="text-sm font-medium text-gray-400 mb-4">页面导航</h4>
+                    <div className="space-y-2">
+                      {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(page => <button key={page} onClick={() => setPreviewPage(page)} className={`w-full text-left p-2 rounded text-sm ${previewPage === page ? 'bg-yellow-500/20 text-yellow-500' : 'text-gray-400 hover:text-white hover:bg-gray-700'}`}>
+                          第 {page} 页
+                        </button>)}
+                    </div>
+                  </div>
+
+                  {/* Preview Content */}
+                  <div className="flex-1 p-8 overflow-y-auto">
+                    <div className="bg-white text-black rounded-lg p-8 min-h-full">
+                      <div className="max-w-4xl mx-auto">
+                        <div className="text-sm text-gray-600 mb-4">第 {previewPage} 页</div>
+                        <div className="whitespace-pre-wrap text-gray-800 leading-relaxed">
+                          {getPreviewContent(previewPage, selectedLanguage)}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>}
+            </div>
+
+            <div className="p-6 border-t border-gray-800">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center space-x-4">
+                  <Button onClick={() => setPreviewPage(Math.max(1, previewPage - 1))} disabled={previewPage === 1} variant="outline" className="border-gray-700 text-gray-400 hover:border-gray-600 hover:text-white">
+                    上一页
+                  </Button>
+                  <span className="text-sm text-gray-400">
+                    第 {previewPage} 页，共 10 页
+                  </span>
+                  <Button onClick={() => setPreviewPage(Math.min(10, previewPage + 1))} disabled={previewPage === 10} variant="outline" className="border-gray-700 text-gray-400 hover:border-gray-600 hover:text-white">
+                    下一页
+                  </Button>
+                </div>
+                
+                <div className="flex items-center space-x-3">
+                  <Button onClick={() => {
+                setShowPreviewModal(false);
+                handleDownloadWhitepaper();
+              }} className="border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-black">
+                    <Download className="w-4 h-4 mr-2" />
+                    下载完整版
+                  </Button>
+                  <Button onClick={() => window.open('https://www.aitaiji.com', '_blank')} className="bg-yellow-500 hover:bg-yellow-600 text-black">
+                    <ExternalLink className="w-4 h-4 mr-2" />
+                    访问官网
+                  </Button>
+                </div>
+              </div>
             </div>
           </div>
         </div>}
