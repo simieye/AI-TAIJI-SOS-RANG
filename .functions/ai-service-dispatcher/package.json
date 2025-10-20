@@ -1,0 +1,10 @@
+
+{
+  "name": "ai-service-dispatcher",
+  "description": "通用AI服务调度云函数，支持多种AI大模型API调用",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "@cloudbase/node-sdk": "^3.3.7"
+  }
+}

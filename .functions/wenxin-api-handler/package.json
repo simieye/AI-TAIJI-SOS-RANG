@@ -1,0 +1,10 @@
+
+{
+  "name": "wenxin-api-handler",
+  "description": "百度文心一言模型API调用云函数，包含参数验证、请求发送和响应处理",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "@cloudbase/node-sdk": "^3.3.7"
+  }
+}
