@@ -65,13 +65,33 @@
       "type": "Number"
     },
     {
-      "name": "token_count",
-      "title": "Token数量",
+      "name": "emotion_label",
+      "title": "情绪标签",
+      "type": "String"
+    },
+    {
+      "name": "emotion_score",
+      "title": "情绪评分",
       "type": "Number"
     },
     {
       "name": "response_time",
       "title": "响应时间(毫秒)",
+      "type": "Number"
+    },
+    {
+      "name": "satisfaction_rating",
+      "title": "满意度评分",
+      "type": "Number"
+    },
+    {
+      "name": "user_feedback",
+      "title": "用户反馈",
+      "type": "MultiLineString"
+    },
+    {
+      "name": "token_count",
+      "title": "Token数量",
       "type": "Number"
     },
     {
@@ -85,14 +105,14 @@
       "type": "String"
     },
     {
-      "name": "user_rating",
-      "title": "用户评分",
-      "type": "Number"
+      "name": "intent",
+      "title": "对话意图",
+      "type": "String"
     },
     {
-      "name": "user_feedback",
-      "title": "用户反馈",
-      "type": "MultiLineString"
+      "name": "confidence",
+      "title": "置信度",
+      "type": "Number"
     },
     {
       "name": "is_edited",
