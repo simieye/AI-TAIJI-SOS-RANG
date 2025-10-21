@@ -1,9 +1,9 @@
 // @ts-ignore;
 import React, { useState, useEffect } from 'react';
 // @ts-ignore;
-import { Button, Input, Select, SelectContent, SelectItem, SelectTrigger, SelectValue, Textarea, Switch, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui';
+import { Button } from '@/components/ui';
 // @ts-ignore;
-import { Menu, X, ChevronRight, Star, Users, MessageCircle, Shield, Zap, Heart, Brain, Activity, Globe, Cpu, Wifi, Battery, ArrowRight, CheckCircle, AlertCircle, Clock, TrendingUp, BarChart, Target, Award, Phone, Mail, MapPin, Calendar, Tag, Languages, Database, Search, Filter, Download, Upload, RefreshCw, Settings, Eye, Edit2, Trash2, Plus, Edit, Copy, Share2, Bell, Headphones, UserCheck, ChevronDown, ChevronUp, ThumbsUp, ThumbsDown, MoreHorizontal, Play, Pause, Square, TrendingDown, User } from 'lucide-react';
+import { ChevronRight, Star, MessageCircle, Shield, Zap, Heart, Brain, Activity, ArrowRight, User } from 'lucide-react';
 
 import { Navigation } from '@/components/Navigation';
 import { AIChatWidget } from '@/components/AIChatWidget';
@@ -105,7 +105,9 @@ export default function Home(props) {
         
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <ChevronDown className="w-6 h-6 text-yellow-500" />
+          <svg className="w-6 h-6 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
         </div>
       </section>
 
@@ -148,7 +150,7 @@ export default function Home(props) {
             description: '深度分析睡眠质量，提供改善建议',
             features: ['睡眠监测', '质量分析', '改善建议']
           }, {
-            icon: Battery,
+            icon: Zap,
             title: '长续航设计',
             description: '低功耗设计，一次充电可使用7天',
             features: ['7天续航', '快充技术', '电量提醒']
