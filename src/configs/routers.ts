@@ -20,6 +20,8 @@ import PUBLISH_ADMIN from '../pages/publish-admin.jsx';
 import LANGUAGE_ADMIN from '../pages/language-admin.jsx';
 import AI_CUSTOMER-SERVICE from '../pages/ai-customer-service.jsx';
 import AI_ADMIN-DASHBOARD from '../pages/ai-admin-dashboard.jsx';
+import AI_CUSTOMER-SERVICE-MAIN from '../pages/ai-customer-service-main.jsx';
+import AGENT_MANAGEMENT-DASHBOARD from '../pages/agent-management-dashboard.jsx';
 export const routers = [{
   id: "home",
   component: HOME
@@ -86,4 +88,10 @@ export const routers = [{
 }, {
   id: "ai-admin-dashboard",
   component: AI_ADMIN-DASHBOARD
+}, {
+  id: "ai-customer-service-main",
+  component: AI_CUSTOMER-SERVICE-MAIN
+}, {
+  id: "agent-management-dashboard",
+  component: AGENT_MANAGEMENT-DASHBOARD
 }]
